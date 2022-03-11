@@ -1,4 +1,26 @@
 <div class="container">
   <app-sidebar></app-sidebar>
-  
+
+  <div class="invoicesWrapper">
+    <div class="header">
+      <div class="left">
+        <h1>Invoices</h1>
+        <p>There are {{ invoices.length }} total invoices.</p>
+      </div>
+      
+      <div class="right">
+        <button class="filterButton">
+          Filter by status
+        </button>
+        <button>New Invoice</button>
+      </div>
+    </div>
+    <app-invoice-item
+      *ngFor="let invoice of invoices"
+      [invoice]="invoice"
+    >
+
+    </app-invoice-item>
+  </div>
+
 </div>
