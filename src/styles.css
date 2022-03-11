@@ -1,4 +1,5 @@
-/* You can add global styles to this file, and also import other style files */
+@import url('https://fonts.googleapis.com/css2?family=Roboto:wght@400;500;700&family=Spartan:wght@400;600;700&display=swap');
+
 html,
 body,
 div,
@@ -128,4 +129,8 @@ q:after {
 table {
   border-collapse: collapse;
   border-spacing: 0;
+}
+
+body {
+  font-family: Spartan, sans-serif;
 }

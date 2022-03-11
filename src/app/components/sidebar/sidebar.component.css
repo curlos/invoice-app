@@ -1,0 +1,42 @@
+.container {
+  width: 100px;
+  height: 100vh;
+  position: sticky;
+  background-color: #373B53;
+  border-top-right-radius: 20px;
+  border-bottom-right-radius: 20px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+
+.logoWrapper {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 30px;
+  background-color: #9277FF;
+  border-top-right-radius: 20px;
+  border-bottom-right-radius: 20px;
+}
+
+.logoWrapper img {
+  width: 40px;
+  height: 37px;
+}
+
+.wrapper {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 30px;
+}
+
+.wrapper img {
+  width: 32px;
+  height: 32px;
+}
+
+.avatar {
+  border-top: 1px solid gray;
+}
