@@ -10,6 +10,7 @@ import { FilterDropdownComponent } from './components/filter-dropdown/filter-dro
 import { InvoicesComponent } from './pages/invoices/invoices.component';
 import { SmallInvoiceItemComponent } from './components/small-invoice-item/small-invoice-item.component';
 import { CheckboxComponent } from './components/checkbox/checkbox.component';
+import { InvoiceItemComponent } from './pages/invoice-item/invoice-item.component';
 
 @NgModule({
   declarations: [
@@ -18,7 +19,8 @@ import { CheckboxComponent } from './components/checkbox/checkbox.component';
     FilterDropdownComponent,
     InvoicesComponent,
     SmallInvoiceItemComponent,
-    CheckboxComponent
+    CheckboxComponent,
+    InvoiceItemComponent
   ],
   imports: [
     BrowserModule,
