@@ -3,7 +3,70 @@
     <h1>Create Invoice</h1>
 
     <form class="formContainer" (ngSubmit)="onSubmit()">
+      <div class="billHeader">Bill From</div>
 
+      <div>
+        <div class="inputWrapper">
+          <label>Street Address</label>
+          <input>
+        </div>
+
+        <div class="threeInputWrapper">
+          <div class="inputWrapper">
+            <label>City</label>
+            <input>
+          </div>
+          
+          <div class="inputWrapper">
+            <label>Post Code</label>
+            <input>
+          </div>
+
+          <div class="inputWrapper">
+            <label>Country</label>
+            <input>
+          </div>
+        </div>
+
+        <div class="twoInputWrapper">
+
+          <div class="inputWrapper">
+            <label>Payment Terms</label>
+            <input type="date">
+          </div>
+          
+          <div class="inputWrapper">
+            <label>Payment Terms</label>
+            <input>
+          </div>
+        </div>
+
+        <div class="inputWrapper">
+          <label>Description</label>
+          <input placeholder="e.g. Graphic Design Service">
+        </div>
+
+        <h2>Item List</h2>
+
+        <button class="addItem">
+          <img src="/assets/images/icon-plus.svg" alt="" />
+          <span>Add New Item</span>
+        </button>
+
+        
+
+      </div>
     </form>
+
+    <div class="actionButtons">
+      <div>
+        <button class="discard">Discard</button>
+      </div>
+      
+      <div class="right">
+        <button class="draft">Save as Draft</button>
+        <button class="send">Save & Send</button>
+      </div>
+    </div>
   </div>
 </div>

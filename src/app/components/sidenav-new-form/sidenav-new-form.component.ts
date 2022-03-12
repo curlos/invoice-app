@@ -1,9 +1,4 @@
-import {
-  Component,
-  OnInit
-}
-
-  from '@angular/core';
+import { Component, OnInit } from '@angular/core';
 
 @Component({
   selector: 'app-sidenav-new-form',
@@ -13,6 +8,7 @@ import {
 
 ) export class SidenavNewFormComponent implements OnInit {
   open: boolean = false
+  paymentTerms: String[] = ['Net 1 Day', 'Net 7 Days', 'Net 14 Days', 'Net 30 Days']
 
   constructor() { }
 
