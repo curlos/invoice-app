@@ -1,0 +1,235 @@
+.container {
+  background-color: #F8F8FB;
+  min-height: 100vh;
+  font-size: 12px;
+}
+
+.invoiceItemWrapper {
+  margin-left: 100px;
+  padding: 50px;
+}
+
+.backLink {
+  cursor: pointer;
+}
+
+.backLink:hover {
+  opacity: 70%;
+}
+
+.backLink span {
+  font-size: 12px;
+  margin-left: 20px;
+}
+
+.statusActions {
+  background-color: #FFFFFF;
+  border-radius: 10px;
+  padding: 20px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin: 20px auto;
+}
+
+.statusWrapper {
+  display: flex;
+  align-items: center;
+  gap: 15px;
+  font-size: 12px;
+  color: #BBBDD1;
+}
+
+.status {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 15px 0px;
+  gap: 10px;
+  width: 100px;
+  border-radius: 10px;
+  font-weight: bold;
+}
+
+.circle {
+  width: 8px;
+  height: 8px;
+  border-radius: 50%;
+}
+
+.paid {
+  background-color: #F3FDF9;
+  color: #32D69F;
+}
+
+.pending {
+  background-color: #FFF8F1;
+  color: #FF8F00;
+}
+
+.draft {
+  background-color: #F3F3F5;
+  color: #373B53;
+}
+
+.paid.circle {
+  background-color: #32D69F;
+}
+
+.pending.circle {
+  background-color: #FF8F00;
+}
+
+.draft.circle {
+  background-color: #373B53;
+}
+
+.actionButtons {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+.actionButtons button {
+  border: none;
+  padding: 15px 25px;
+  border-radius: 25px;
+  font-weight: bold;
+  cursor: pointer;
+}
+
+.edit {
+  background-color: rgb(249, 250, 254);
+  color: rgb(126, 136, 195);
+}
+
+.edit:hover {
+  background-color: #DFE3FA;
+}
+
+.delete {
+  background-color: rgb(236, 87, 87);
+  color: #FFFFFF;
+}
+
+.delete:hover {
+  background-color: rgb(255, 151, 151);
+}
+
+.details {
+  background-color: #FFFFFF;
+  border-radius: 20px;
+  padding: 20px;
+}
+
+.top {
+  display: flex;
+  justify-content: space-between;
+  margin-bottom: 30px;
+}
+
+.top .left {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+.invoiceId {
+  font-weight: bold;
+  font-size: 16px;
+  letter-spacing: -1px;
+}
+
+.invoiceId span {
+  color: rgb(126, 136, 195);
+  letter-spacing: -0.25px;
+  line-height: 1.125;
+}
+
+.description {
+  color: rgb(136, 142, 176);
+}
+
+.top .right {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-end;
+  gap: 7px;
+  color: rgb(136, 142, 176);
+}
+
+.middle {
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr;
+  color: rgb(136, 142, 176);
+}
+
+.middle .start,
+.middle .middleMiddle,
+.middle .end {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+
+.middle .detail {
+  font-weight: bold;
+  font-size: 15px;
+  color: rgb(12, 14, 22);
+  margin: 10px auto;
+}
+
+.end {
+  background-color: rgb(249, 250, 254);
+  padding: 35px;
+  border-radius: 10px;
+  border-bottom-left-radius: 0px;
+  border-bottom-right-radius: 0px;
+  margin-top: 40px;
+}
+
+.itemName,
+.itemTotal {
+  color: rgb(12, 14, 22);
+  font-weight: bold;
+}
+
+.colHeader,
+.total {
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr 1fr;
+}
+
+.colHeader {
+  margin-bottom: 30px;
+}
+
+.itemsWrapper {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+  margin-bottom: 20px;
+}
+
+.itemCol {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+
+.amountDue {
+  background-color: rgb(55, 59, 83);
+  color: #FFFFFF;
+  border-bottom-left-radius: 10px;
+  border-bottom-right-radius: 10px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 30px;
+  font-weight: bold;
+  font-size: 11px;
+}
+
+.amountDue h2 {
+  font-size: 32px;
+}
