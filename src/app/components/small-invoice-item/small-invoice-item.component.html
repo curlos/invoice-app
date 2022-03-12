@@ -1,0 +1,39 @@
+<div class="container">
+  <div class="left">
+    <h2 class="invoiceId">
+      <span>#</span>
+      {{ invoice.id }}
+    </h2>
+
+    <div class="paymentDue">
+      Due {{ getFormattedDate() }}
+    </div>
+
+    <div class="clientName">
+      {{ invoice.clientName }}
+    </div>
+  </div>
+
+  <div class="right">
+    <div class="total">
+      ${{ invoice.total }}
+    </div>
+
+    <div [ngClass]="{
+      'paid': invoice.status === 'paid',
+      'pending': invoice.status === 'pending',
+      'draft': invoice.status === 'draft'}" class="status">
+
+      <div [ngClass]="{
+        'paid': invoice.status === 'paid',
+        'pending': invoice.status === 'pending',
+        'draft': invoice.status === 'draft'}" class="circle"></div>
+        
+      <div>
+        {{ invoice.status.slice(0,1).toUpperCase() + invoice.status.slice(1) }}
+      </div>
+    </div>
+
+    <img src="/assets/images/icon-arrow-right.svg" alt="right arrow" />
+  </div>
+</div>

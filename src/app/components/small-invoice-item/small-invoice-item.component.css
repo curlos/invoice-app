@@ -1,0 +1,80 @@
+.container {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  background-color: #FFFFFF;
+  padding: 30px;
+  border-radius: 10px;
+  font-size: 12px;
+  cursor: pointer;
+}
+
+.left,
+.right {
+  display: flex;
+  align-items: center;
+  gap: 20px;
+}
+
+.invoiceId {
+  font-weight: bold;
+}
+
+.invoiceId span {
+  color: rgb(136, 142, 176);
+}
+
+.paymentDue,
+.clientName {
+  color: rgb(136, 142, 176);
+}
+
+.total {
+  font-weight: bold;
+  font-size: 16px;
+}
+
+.status {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding-top: 20px;
+  padding-bottom: 15px;
+  gap: 10px;
+  width: 100px;
+  border-radius: 10px;
+  font-weight: bold;
+}
+
+.circle {
+  width: 8px;
+  height: 8px;
+  border-radius: 50%;
+}
+
+.paid {
+  background-color: #F3FDF9;
+  color: #32D69F;
+}
+
+.pending {
+  background-color: #FFF8F1;
+  color: #FF8F00;
+}
+
+.draft {
+  background-color: #F3F3F5;
+  color: #373B53;
+}
+
+.paid.circle {
+  background-color: #32D69F;
+}
+
+.pending.circle {
+  background-color: #FF8F00;
+}
+
+.draft.circle {
+  background-color: #373B53;
+}

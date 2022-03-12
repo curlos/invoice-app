@@ -9,18 +9,19 @@
       </div>
       
       <div class="right">
-        <button class="filterButton">
-          Filter by status
-        </button>
+        <app-filter-dropdown></app-filter-dropdown>
         <button>New Invoice</button>
       </div>
     </div>
-    <app-invoice-item
+    
+    <app-small-invoice-item
       *ngFor="let invoice of invoices"
       [invoice]="invoice"
     >
 
-    </app-invoice-item>
+    </app-small-invoice-item>
+    
+    
   </div>
 
 </div>

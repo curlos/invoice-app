@@ -1,7 +1,7 @@
 .container {
   width: 100px;
   height: 100vh;
-  position: sticky;
+  position: fixed;
   background-color: #373B53;
   border-top-right-radius: 20px;
   border-bottom-right-radius: 20px;
