@@ -23,8 +23,40 @@
 .left h1 {
   font-weight: bold;
   font-size: 2rem;
+  margin-bottom: 10px;
 }
 
 .left p {
   color: rgb(136, 142, 176);
+  font-size: 12px;
+}
+
+.right {
+  display: flex;
+  align-items: center;
+  gap: 20px;
+}
+
+.newInvoice {
+  padding: 7px 10px;
+  padding-right: 15px;
+  background-color: #9277FF;
+  color: #FFFFFF;
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  border: none;
+  border-radius: 25px;
+  font-weight: bold;
+  cursor: pointer;
+}
+
+.newInvoice img {
+  background-color: #FFFFFF;
+  padding: 10px;
+  border-radius: 50%;
+}
+
+.newInvoice:hover {
+  background-color: rgb(164, 142, 255);
 }

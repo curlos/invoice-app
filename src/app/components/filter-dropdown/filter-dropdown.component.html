@@ -1,25 +1,15 @@
 <div class="dropdown">
-  <button>
+  <button (click)="toggleDropdown()">
     Filter by status
     <img src="/assets/images/icon-arrow-down.svg" alt="arrow" />
   </button>
-  <div class="dropdown-content">
+  <div *ngIf="open" class="dropdown-content">
     <div class="option">
-      <input type="checkbox" id="Paid" name="Paid"
-         checked>
-      <label for="Paid">Paid</label>
-    </div>
-
-    <div class="option">
-      <input type="checkbox" id="Paid" name="Paid"
-         checked>
-      <label for="Paid">Paid</label>
-    </div>
-
-    <div class="option">
-      <input type="checkbox" id="Paid" name="Paid"
-         checked>
-      <label for="Paid">Paid</label>
+      <label class="container">Paid
+        <input type="checkbox" checked="checked">
+        <span class="checkmark"></span>
+      </label>
+      
     </div>
 
   </div>

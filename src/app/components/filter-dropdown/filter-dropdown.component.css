@@ -4,7 +4,7 @@
 }
 
 .dropdown-content {
-  display: none;
+  display: block;
   position: absolute;
   background-color: #FFFFFF;
   min-width: 12rem;
@@ -14,10 +14,6 @@
   z-index: 1;
   margin-top: 20px;
   margin-left: -4rem;
-}
-
-.dropdown:hover .dropdown-content {
-  display: block;
 }
 
 button {
@@ -30,6 +26,7 @@ button {
   display: flex;
   align-items: center;
   gap: 10px;
+  cursor: pointer;
 }
 
 .option {
