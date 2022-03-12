@@ -21,4 +21,9 @@ export class InvoiceService {
   getInvoices(): Observable<Invoice[]> {
     return this.http.get<Invoice[]>(this.apiUrl)
   }
+
+  getInvoice(id: string): Observable<Invoice> {
+    const url = `${this.apiUrl}/${id}`
+    return this.http.get<Invoice>(url)
+  }
 }

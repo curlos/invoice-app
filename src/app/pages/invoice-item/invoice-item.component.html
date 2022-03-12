@@ -1,1 +1,132 @@
-<p>invoice-item works!</p>
+<div class="container">
+  <app-sidebar></app-sidebar>
+
+  <div class="invoiceItemWrapper">
+    <div routerLink="/" class="backLink">
+      <img src="/assets/images/icon-arrow-left.svg" alt="" />
+      <span>Go back</span>
+    </div>
+
+    <div *ngIf="!loading" class="invoiceInfoWrapper">
+      <div class="statusActions">
+        <div class="statusWrapper">
+          <div>Status</div>
+          <div [ngClass]="{
+            'paid': invoice.status === 'paid',
+            'pending': invoice.status === 'pending',
+            'draft': invoice.status === 'draft'}" class="status">
+      
+            <div [ngClass]="{
+              'paid': invoice.status === 'paid',
+              'pending': invoice.status === 'pending',
+              'draft': invoice.status === 'draft'}" class="circle"></div>
+              
+            <div>
+              {{ invoice.status.slice(0,1).toUpperCase() + invoice.status.slice(1) }}
+            </div>
+          </div>
+        </div>
+
+        <div class="actionButtons">
+          <button class="edit">Edit</button>
+          <button class="delete">Delete</button>
+        </div>
+      </div>
+
+      <div class="details">
+        <div class="top">
+          <div class="left">
+            <div class="invoiceId">
+              <span>#</span>
+              {{ invoice.id }}
+            </div>
+
+            <p class="description">
+              Re-branding
+            </p>
+          </div>
+
+          <div class="right">
+            <div>{{ invoice.senderAddress.street }}</div>
+            <div>{{ invoice.senderAddress.city }}</div>
+            <div>{{ invoice.senderAddress.postCode }}</div>
+            <div>{{ invoice.senderAddress.country }}</div>
+          </div>
+        </div>
+
+
+        <div class="middle">
+          <div class="start">
+            <div>
+              <h4>Invoice Date</h4>
+              <div class="detail">{{ invoice.createdAt }}</div>
+            </div>
+
+            <div>
+              <h4>Payment Due</h4>
+              <div class="detail">{{ invoice.paymentDue }}</div>
+            </div>
+          </div>
+
+          <div class="middleMiddle">
+            <h4>Bill to</h4>
+
+            <div>
+              <div class="detail">{{ invoice.clientName }}</div>
+              <div class="address">
+                <div>{{ invoice.clientAddress.street }}</div>
+                <div>{{ invoice.clientAddress.city }}</div>
+                <div>{{ invoice.clientAddress.postCode }}</div>
+                <div>{{ invoice.clientAddress.country }}</div>
+              </div>
+            </div>
+          </div>
+
+          <div class="">
+            <div>
+              <h4>Sent to</h4>
+              <div class="detail">{{ invoice.clientEmail }}</div>
+            </div>
+          </div>
+        </div>
+
+        <div class="end">
+          <div class="colHeader">
+            <div>Item Name</div>
+            <div>QTY.</div>
+            <div>Price</div>
+            <div>Total</div>
+          </div>
+
+          <div class="itemsWrapper">
+            <div *ngFor="let item of invoice.items" class="total">
+              <div class="itemCol">
+                <div class="itemName">{{ item.name }}</div>
+              </div>
+  
+              <div class="itemCol">
+                <div>{{ item.quantity }}</div>
+              </div>
+  
+              <div class="itemCol">
+                <div>{{ item.price }}</div>
+              </div>
+  
+              <div class="itemCol">
+                <div class="itemTotal">${{ item.total }}</div>
+              </div>
+            </div>
+          </div>
+          
+        </div>
+
+        <div class="amountDue">
+          <div>Amount Due</div>
+          <h2>${{ invoice.total }}</h2>
+        </div>
+      </div>
+    </div>
+
+
+  </div>
+</div>
