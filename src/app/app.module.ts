@@ -11,6 +11,7 @@ import { InvoicesComponent } from './pages/invoices/invoices.component';
 import { SmallInvoiceItemComponent } from './components/small-invoice-item/small-invoice-item.component';
 import { CheckboxComponent } from './components/checkbox/checkbox.component';
 import { InvoiceItemComponent } from './pages/invoice-item/invoice-item.component';
+import { SidenavNewFormComponent } from './components/sidenav-new-form/sidenav-new-form.component';
 
 @NgModule({
   declarations: [
@@ -20,7 +21,8 @@ import { InvoiceItemComponent } from './pages/invoice-item/invoice-item.componen
     InvoicesComponent,
     SmallInvoiceItemComponent,
     CheckboxComponent,
-    InvoiceItemComponent
+    InvoiceItemComponent,
+    SidenavNewFormComponent
   ],
   imports: [
     BrowserModule,

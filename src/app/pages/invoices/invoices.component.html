@@ -1,5 +1,6 @@
 <div class="container">
   <app-sidebar></app-sidebar>
+  <app-sidenav-new-form></app-sidenav-new-form>
 
   <div class="invoicesWrapper">
     <div class="header">
@@ -10,7 +11,7 @@
       
       <div class="right">
         <app-filter-dropdown></app-filter-dropdown>
-        <button class="newInvoice">
+        <button class="newInvoice" (click)="onNewInvoiceClick()">
           <img src="/assets/images/icon-plus.svg" alt="plus icon" />
           <span>New Invoice</span>
         </button>
