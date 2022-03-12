@@ -91,33 +91,22 @@
         </div>
 
         <div class="end">
-          <div class="colHeader">
-            <div>Item Name</div>
-            <div>QTY.</div>
-            <div>Price</div>
-            <div>Total</div>
-          </div>
-
-          <div class="itemsWrapper">
-            <div *ngFor="let item of invoice.items" class="total">
-              <div class="itemCol">
-                <div class="itemName">{{ item.name }}</div>
-              </div>
+          <table>
+            <tr>
+              <th class="name">Item Name</th>
+              <th class="quantity">QTY.</th>
+              <th class="price">Price</th>
+              <th class="total">Total</th>
+            </tr>
   
-              <div class="itemCol">
-                <div>{{ item.quantity }}</div>
-              </div>
-  
-              <div class="itemCol">
-                <div>{{ item.price }}</div>
-              </div>
-  
-              <div class="itemCol">
-                <div class="itemTotal">${{ item.total }}</div>
-              </div>
-            </div>
-          </div>
-          
+            <tr *ngFor="let item of invoice.items">
+              <td class="name">{{ item.name }}</td>
+              <td class="quantity">{{ item.quantity }}</td>
+              <td class="price">${{ item.price }}</td>
+              <td class="total">${{ item.total }}</td>
+            </tr>
+            
+          </table>
         </div>
 
         <div class="amountDue">
