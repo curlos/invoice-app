@@ -4,12 +4,19 @@
     <img src="/assets/images/icon-arrow-down.svg" alt="arrow" />
   </button>
   <div *ngIf="open" class="dropdown-content">
-    <div class="option">
-      <label class="container">Paid
-        <input type="checkbox" checked="checked">
-        <span class="checkmark"></span>
-      </label>
-      
+    <div class="option" name="Paid">
+      <app-checkbox></app-checkbox>
+      <label>Paid</label>
+    </div>
+
+    <div class="option" name="Pending">
+      <app-checkbox></app-checkbox>
+      <label>Pending</label>
+    </div>
+
+    <div class="option" name="Draft">
+      <app-checkbox></app-checkbox>
+      <label>Draft</label>
     </div>
 
   </div>

@@ -9,6 +9,7 @@ import { SidebarComponent } from './components/sidebar/sidebar.component';
 import { FilterDropdownComponent } from './components/filter-dropdown/filter-dropdown.component';
 import { InvoicesComponent } from './pages/invoices/invoices.component';
 import { SmallInvoiceItemComponent } from './components/small-invoice-item/small-invoice-item.component';
+import { CheckboxComponent } from './components/checkbox/checkbox.component';
 
 @NgModule({
   declarations: [
@@ -16,7 +17,8 @@ import { SmallInvoiceItemComponent } from './components/small-invoice-item/small
     SidebarComponent,
     FilterDropdownComponent,
     InvoicesComponent,
-    SmallInvoiceItemComponent
+    SmallInvoiceItemComponent,
+    CheckboxComponent
   ],
   imports: [
     BrowserModule,

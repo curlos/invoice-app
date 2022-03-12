@@ -3,10 +3,15 @@
   justify-content: space-between;
   align-items: center;
   background-color: #FFFFFF;
-  padding: 30px;
+  padding: 20px;
   border-radius: 10px;
   font-size: 12px;
   cursor: pointer;
+  border: 1px solid transparent;
+}
+
+.container:hover {
+  border-color: rgb(124, 93, 250);
 }
 
 .left,
@@ -38,8 +43,7 @@
   display: flex;
   justify-content: center;
   align-items: center;
-  padding-top: 20px;
-  padding-bottom: 15px;
+  padding: 15px 0px;
   gap: 10px;
   width: 100px;
   border-radius: 10px;
