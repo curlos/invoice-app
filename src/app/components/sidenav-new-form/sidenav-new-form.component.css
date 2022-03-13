@@ -110,10 +110,10 @@ input:focus {
 }
 
 .threeInputWrapper,
-.twoInputWrapper {
+.twoInputWrapper,
+.fourInputWrapper {
   display: grid;
   grid-template-columns: 1fr 1fr 1fr;
-  grid-gap: 10px;
   width: 100%;
   height: 100%;
 }
@@ -201,4 +201,8 @@ button.addItem:hover {
 
 .send:hover {
   background-color: rgb(126, 101, 226);
+}
+
+.fourInputWrapper {
+  grid-template-columns: 3fr 1fr 2fr 2fr;
 }
