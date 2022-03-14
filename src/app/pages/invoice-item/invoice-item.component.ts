@@ -24,5 +24,4 @@ export class InvoiceItemComponent implements OnInit {
       console.log(invoice)
     })
   }
-
 }

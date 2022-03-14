@@ -1,5 +1,5 @@
-<div [ngClass]="{openSidenavWrapper: !open}" class="sidenavWrapper" (click)="closeSidenav()">
-  <div id="mySidenav" [ngClass]="{openSidenav: !open}" class="sidenav" (newInvoiceClick)="openSidenav()">
+<div [ngClass]="{openSidenavWrapper: getOpen()}" class="sidenavWrapper" (click)="closeSidenav()">
+  <div id="mySidenav" [ngClass]="{openSidenav: getOpen()}" class="sidenav" (click)="onEvent($event)">
     <h1>Create Invoice</h1>
 
     <form class="formContainer" (ngSubmit)="onSubmit()">
