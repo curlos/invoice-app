@@ -114,7 +114,5 @@ import { Item } from '../../types/item';
       this.invoices.push(invoice)
       this.closeSidenav()
     })
-
-    console.log(newInvoice)
   }
 }

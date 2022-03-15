@@ -30,4 +30,9 @@ export class InvoiceService {
   saveInvoice(invoice: Invoice): Observable<Invoice> {
     return this.http.post<Invoice>(this.apiUrl, invoice, httpOptions)
   }
+
+  deleteInvoice(invoice: Invoice): Observable<Invoice> {
+    const url = `${this.apiUrl}/${invoice.id}`
+    return this.http.delete<Invoice>(url)
+  }
 }

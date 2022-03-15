@@ -1,7 +1,8 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, Input, OnInit } from '@angular/core';
 import { InvoiceService } from '../../services/invoice.service';
 import { ActivatedRoute } from '@angular/router';
 import { Invoice } from '../../types/Invoice';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-invoice-item',
@@ -13,7 +14,7 @@ export class InvoiceItemComponent implements OnInit {
   invoice!: Invoice
   loading: boolean = true
 
-  constructor(private route: ActivatedRoute, private invoiceService: InvoiceService) { }
+  constructor(private route: ActivatedRoute, private invoiceService: InvoiceService, private router: Router) { }
 
   ngOnInit(): void {
     this.id = this.route.snapshot.paramMap.get('id') || ''
@@ -27,5 +28,13 @@ export class InvoiceItemComponent implements OnInit {
 
   getRoundedNum(total: number) {
     return Math.round((total + Number.EPSILON) * 100) / 100
+  }
+
+  deleteInvoice(): void {
+    console.log('deleting')
+    this.invoiceService.deleteInvoice(this.invoice).subscribe(() => {
+      console.log(this.invoice)
+      this.router.navigate(['/'])
+    })
   }
 }

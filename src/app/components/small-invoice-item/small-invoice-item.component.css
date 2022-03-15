@@ -23,6 +23,7 @@
 
 .invoiceId {
   font-weight: bold;
+  text-transform: uppercase;
 }
 
 .invoiceId span {
