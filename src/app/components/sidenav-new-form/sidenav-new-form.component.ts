@@ -1,6 +1,7 @@
 import { Component, OnInit, Output, EventEmitter } from '@angular/core';
 import { SidenavService } from '../../services/sidenav.service';
 import { Address } from '../../types/address';
+import { Item } from '../../types/item';
 
 
 @Component({
@@ -30,12 +31,14 @@ import { Address } from '../../types/address';
   invoiceDate: Date = new Date()
   description: String = ''
   paymentTerms: String = ''
+  items: Item[] = []
   paymentTermOptions: Object = {
     'Net 1 Day': 1,
     'Net 7 Days': 2,
     'Net 14 Days': 3,
     'Net 30 Days': 4
   }
+
 
   constructor(private sidenavService: SidenavService) {
 
@@ -58,6 +61,12 @@ import { Address } from '../../types/address';
   }
 
   addNewItem() {
+    this.items.push({
+      name: '',
+      quantity: 0,
+      price: 0,
+      total: 0
+    })
   }
 
   getTotal(): Number {

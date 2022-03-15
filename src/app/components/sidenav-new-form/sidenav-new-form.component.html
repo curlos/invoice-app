@@ -106,7 +106,7 @@
 
         <h2>Item List</h2>
 
-        <div class="fourInputWrapper">
+        <div *ngFor="let item of items" class="fourInputWrapper">
           <div class="inputWrapper">
             <label>Item Name</label>
             <input type="text">
