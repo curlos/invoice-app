@@ -3,47 +3,105 @@
     <h1>Create Invoice</h1>
 
     <form class="formContainer" (ngSubmit)="sendInvoice()">
-      <div class="billHeader">Bill From</div>
 
       <div>
-        <div class="inputWrapper">
-          <label>Street Address</label>
-          <input type="text" name="streetAddress" [ngModel]="senderAddress?.street" (ngModelChange)="senderAddress && senderAddress.street = $event">
+
+        <div class="billWrapper">
+          <div class="billHeader">Bill From</div>
+        
+          <div class="inputWrapper">
+            <label>Street Address</label>
+            <input type="text" name="streetAddress" [ngModel]="senderAddress?.street" (ngModelChange)="senderAddress && senderAddress.street = $event">
+          </div>
+
+          <div class="threeInputWrapper">
+            <div class="inputWrapper">
+              <label>City</label>
+              <input type="text" name="city" [ngModel]="senderAddress?.city" (ngModelChange)="senderAddress && senderAddress.city = $event">
+            </div>
+            
+            <div class="inputWrapper">
+              <label>Post Code</label>
+              <input type="text" name="postCode" [ngModel]="senderAddress?.postCode" (ngModelChange)="senderAddress && senderAddress.postCode = $event">
+            </div>
+
+            <div class="inputWrapper">
+              <label>Country</label>
+              <input type="text" name="country" [ngModel]="senderAddress?.country" (ngModelChange)="senderAddress && senderAddress.country = $event">
+            </div>
+          </div>
+
+          <div class="twoInputWrapper">
+
+            <div class="inputWrapper">
+              <label>Invoice Date</label>
+              <input type="date" name="invoiceDate" [(ngModel)]="invoiceDate">
+            </div>
+            
+            <div class="inputWrapper">
+              <label>Payment Terms</label>
+              <input type="text" name="paymentTerms" [(ngModel)]="paymentTerms">
+            </div>
+          </div>
+
+          <div class="inputWrapper">
+            <label>Description</label>
+            <input type="text" name="description" [(ngModel)]="description" placeholder="e.g. Graphic Design Service">
+          </div>
         </div>
 
-        <div class="threeInputWrapper">
+        <div class="billWrapper">
+          <div class="billHeader">Bill To</div>
+
           <div class="inputWrapper">
-            <label>City</label>
-            <input type="text" name="city" [ngModel]="senderAddress?.city" (ngModelChange)="senderAddress && senderAddress.city = $event">
-          </div>
-          
-          <div class="inputWrapper">
-            <label>Post Code</label>
-            <input type="text" name="postCode" [ngModel]="senderAddress?.postCode" (ngModelChange)="senderAddress && senderAddress.postCode = $event">
+            <label>Client's Name</label>
+            <input type="text" name="streetAddress" [(ngModel)]="clientName">
           </div>
 
           <div class="inputWrapper">
-            <label>Country</label>
-            <input type="text" name="country" [ngModel]="senderAddress?.country" (ngModelChange)="senderAddress && senderAddress.country = $event">
+            <label>Client's Email</label>
+            <input type="email" name="streetAddress" placeholder="e.g. email@example.com" [(ngModel)]="clientEmail">
           </div>
-        </div>
+        
+          <div class="inputWrapper">
+            <label>Street Address</label>
+            <input type="text" name="streetAddress" [ngModel]="clientAddress?.street" (ngModelChange)="clientAddress && clientAddress.street = $event">
+          </div>
 
-        <div class="twoInputWrapper">
+          <div class="threeInputWrapper">
+            <div class="inputWrapper">
+              <label>City</label>
+              <input type="text" name="city" [ngModel]="clientAddress?.city" (ngModelChange)="clientAddress && clientAddress.city = $event">
+            </div>
+            
+            <div class="inputWrapper">
+              <label>Post Code</label>
+              <input type="text" name="postCode" [ngModel]="clientAddress?.postCode" (ngModelChange)="clientAddress && clientAddress.postCode = $event">
+            </div>
+
+            <div class="inputWrapper">
+              <label>Country</label>
+              <input type="text" name="country" [ngModel]="clientAddress?.country" (ngModelChange)="clientAddress && clientAddress.country = $event">
+            </div>
+          </div>
+
+          <div class="twoInputWrapper">
+
+            <div class="inputWrapper">
+              <label>Invoice Date</label>
+              <input type="date" name="invoiceDate" [(ngModel)]="invoiceDate">
+            </div>
+            
+            <div class="inputWrapper">
+              <label>Payment Terms</label>
+              <input type="text" name="paymentTerms" [(ngModel)]="paymentTerms">
+            </div>
+          </div>
 
           <div class="inputWrapper">
-            <label>Invoice Date</label>
-            <input type="date" name="invoiceDate" [(ngModel)]="invoiceDate">
+            <label>Description</label>
+            <input type="text" name="description" [(ngModel)]="description" placeholder="e.g. Graphic Design Service">
           </div>
-          
-          <div class="inputWrapper">
-            <label>Payment Terms</label>
-            <input type="text" name="paymentTerms" [(ngModel)]="paymentTerms">
-          </div>
-        </div>
-
-        <div class="inputWrapper">
-          <label>Description</label>
-          <input type="text" name="description" [(ngModel)]="description" placeholder="e.g. Graphic Design Service">
         </div>
 
         <h2>Item List</h2>

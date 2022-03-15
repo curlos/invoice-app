@@ -73,6 +73,10 @@ h1 {
   color: #9277FF;
 }
 
+.billWrapper {
+  margin-bottom: 40px;
+}
+
 h1,
 .billHeader {
   padding-left: 5px;
