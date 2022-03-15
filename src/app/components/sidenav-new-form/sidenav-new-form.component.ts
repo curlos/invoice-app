@@ -1,5 +1,6 @@
 import { Component, OnInit, Output, EventEmitter } from '@angular/core';
 import { SidenavService } from '../../services/sidenav.service';
+import { Address } from '../../types/address';
 
 
 @Component({
@@ -9,7 +10,32 @@ import { SidenavService } from '../../services/sidenav.service';
 }
 
 ) export class SidenavNewFormComponent implements OnInit {
-  paymentTerms: String[] = ['Net 1 Day', 'Net 7 Days', 'Net 14 Days', 'Net 30 Days']
+  senderAddress: Address = {
+    street: '',
+    city: '',
+    postCode: '',
+    country: ''
+  }
+
+  clientAddress: Address = {
+    street: '',
+    city: '',
+    postCode: '',
+    country: ''
+  }
+
+  clientName: String = ''
+  clientEmail: String = ''
+
+  invoiceDate: Date = new Date()
+  description: String = ''
+  paymentTerms: String = ''
+  paymentTermOptions: Object = {
+    'Net 1 Day': 1,
+    'Net 7 Days': 2,
+    'Net 14 Days': 3,
+    'Net 30 Days': 4
+  }
 
   constructor(private sidenavService: SidenavService) {
 
@@ -31,9 +57,26 @@ import { SidenavService } from '../../services/sidenav.service';
     event.stopPropagation()
   }
 
+  addNewItem() {
+  }
 
+  getTotal(): Number {
+    return 1800.9
+  }
 
-  onSubmit(): void {
-    console.log('submitting')
+  sendInvoice(): void {
+
+    const newInvoice = {
+      paymentDue: this.invoiceDate,
+      description: this.description,
+      paymentTerms: 1,
+      status: 'draft',
+      senderAddress: this.senderAddress,
+      clientAddress: this.clientAddress,
+      items: [],
+      total: this.getTotal()
+    }
+
+    console.log(this.senderAddress)
   }
 }

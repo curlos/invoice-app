@@ -2,48 +2,48 @@
   <div id="mySidenav" [ngClass]="{openSidenav: getOpen()}" class="sidenav" (click)="onEvent($event)">
     <h1>Create Invoice</h1>
 
-    <form class="formContainer" (ngSubmit)="onSubmit()">
+    <form class="formContainer" (ngSubmit)="sendInvoice()">
       <div class="billHeader">Bill From</div>
 
       <div>
         <div class="inputWrapper">
           <label>Street Address</label>
-          <input>
+          <input type="text" name="streetAddress" [ngModel]="senderAddress?.street" (ngModelChange)="senderAddress && senderAddress.street = $event">
         </div>
 
         <div class="threeInputWrapper">
           <div class="inputWrapper">
             <label>City</label>
-            <input>
+            <input type="text" name="city" [ngModel]="senderAddress?.city" (ngModelChange)="senderAddress && senderAddress.city = $event">
           </div>
           
           <div class="inputWrapper">
             <label>Post Code</label>
-            <input>
+            <input type="text" name="postCode" [ngModel]="senderAddress?.postCode" (ngModelChange)="senderAddress && senderAddress.postCode = $event">
           </div>
 
           <div class="inputWrapper">
             <label>Country</label>
-            <input>
+            <input type="text" name="country" [ngModel]="senderAddress?.country" (ngModelChange)="senderAddress && senderAddress.country = $event">
           </div>
         </div>
 
         <div class="twoInputWrapper">
 
           <div class="inputWrapper">
-            <label>Payment Terms</label>
-            <input type="date">
+            <label>Invoice Date</label>
+            <input type="date" name="invoiceDate" [(ngModel)]="invoiceDate">
           </div>
           
           <div class="inputWrapper">
             <label>Payment Terms</label>
-            <input>
+            <input type="text" name="paymentTerms" [(ngModel)]="paymentTerms">
           </div>
         </div>
 
         <div class="inputWrapper">
           <label>Description</label>
-          <input placeholder="e.g. Graphic Design Service">
+          <input type="text" name="description" [(ngModel)]="description" placeholder="e.g. Graphic Design Service">
         </div>
 
         <h2>Item List</h2>
@@ -70,7 +70,7 @@
           </div>
         </div>
 
-        <button class="addItem">
+        <button class="addItem" (click)="addNewItem()">
           <img src="/assets/images/icon-plus.svg" alt="" />
           <span>Add New Item</span>
         </button>
@@ -82,12 +82,12 @@
 
     <div class="actionButtons">
       <div>
-        <button class="discard">Discard</button>
+        <button class="discard" (click)="closeSidenav()">Discard</button>
       </div>
       
       <div class="right">
         <button class="draft">Save as Draft</button>
-        <button class="send">Save & Send</button>
+        <button class="send" (click)="sendInvoice()">Save & Send</button>
       </div>
     </div>
   </div>
