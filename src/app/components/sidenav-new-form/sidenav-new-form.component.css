@@ -209,4 +209,26 @@ button.addItem:hover {
 
 .fourInputWrapper {
   grid-template-columns: 3fr 1fr 2fr 2fr;
+  
+}
+
+.totalWrapper {
+  flex: 1;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 10px;
+  font-size: 12px;
+  font-weight: bold;
+  font-family: Spartan, sans-serif;
+  color: rgb(136, 142, 176);
+  padding-right: 30px;
+}
+
+.totalWrapper img {
+  cursor: pointer;
+}
+
+.totalWrapper img:hover {
+  fill: red;
 }

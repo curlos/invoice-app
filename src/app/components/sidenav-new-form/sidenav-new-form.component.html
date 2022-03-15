@@ -106,25 +106,42 @@
 
         <h2>Item List</h2>
 
-        <div *ngFor="let item of items" class="fourInputWrapper">
+        <div *ngIf="items.length > 0" class="fourInputWrapper">
           <div class="inputWrapper">
             <label>Item Name</label>
-            <input type="text">
           </div>
 
           <div class="inputWrapper">
             <label>Qty.</label>
-            <input type="text">
           </div>
 
           <div class="inputWrapper">
             <label>Price</label>
-            <input type="text">
           </div>
 
           <div class="inputWrapper">
             <label>Total</label>
-            <input type="text">
+          </div>
+        </div>
+
+        <div *ngFor="let item of items; let i = index" class="fourInputWrapper">
+          <div class="inputWrapper">
+            <input type="text" [name]="'itemName' + i" [ngModel]="items[i]?.name" (ngModelChange)="items[i] && items[i].name = $event">
+          </div>
+
+          <div class="inputWrapper">
+            <input type="text" [name]="'itemQuantity' + i" [ngModel]="items[i]?.quantity" (ngModelChange)="changeItemQuantity(i, $event)">
+          </div>
+
+          <div class="inputWrapper">
+            <input type="text" [name]="'itemPrice' + i" [ngModel]="items[i]?.price" (ngModelChange)="changeItemPrice(i, $event)">
+          </div>
+
+          <div class="inputWrapper">
+            <div class="totalWrapper">
+              <div>{{ items[i].total }}</div>
+              <img src="/assets/images/icon-delete.svg" alt="delete icon" />
+            </div>
           </div>
         </div>
 

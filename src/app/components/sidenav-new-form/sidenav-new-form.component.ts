@@ -32,6 +32,7 @@ import { Item } from '../../types/item';
   description: String = ''
   paymentTerms: String = ''
   items: Item[] = []
+  total: Number = 0
   paymentTermOptions: Object = {
     'Net 1 Day': 1,
     'Net 7 Days': 2,
@@ -69,8 +70,26 @@ import { Item } from '../../types/item';
     })
   }
 
-  getTotal(): Number {
-    return 1800.9
+  changeItemQuantity(i: number, value: string) {
+    console.log(value)
+    this.items[i].quantity = Number(value)
+    this.changeItemTotal(i)
+  }
+
+  changeItemPrice(i: number, value: string) {
+    console.log(value)
+    this.items[i].price = Number(value)
+    this.changeItemTotal(i)
+  }
+
+  changeItemTotal(i: number): void {
+    console.log('Changing total')
+    console.log(i)
+    this.items[i].total = Number(this.items[i].quantity) * Number(this.items[i].price)
+  }
+
+  getTotal(): number {
+    return this.items.map((item) => item.total).reduce((prev, curr) => prev + curr, 0)
   }
 
   sendInvoice(): void {
@@ -82,10 +101,10 @@ import { Item } from '../../types/item';
       status: 'draft',
       senderAddress: this.senderAddress,
       clientAddress: this.clientAddress,
-      items: [],
+      items: this.items,
       total: this.getTotal()
     }
 
-    console.log(this.senderAddress)
+    console.log(this.items)
   }
 }
