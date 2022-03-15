@@ -1,6 +1,9 @@
 <div class="container">
   <app-sidebar></app-sidebar>
+
   <app-delete-modal *ngIf="getOpenDeleteModal()" [invoice]="invoice"></app-delete-modal>
+  
+  <app-sidenav-new-form></app-sidenav-new-form>
 
   <div class="invoiceItemWrapper">
     <div routerLink="/" class="backLink">
@@ -29,7 +32,7 @@
         </div>
 
         <div class="actionButtons">
-          <button class="edit">Edit</button>
+          <button class="edit" (click)="openSidenav()">Edit</button>
           <button class="delete" (click)="openDeleteModal()">Delete</button>
         </div>
       </div>

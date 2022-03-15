@@ -1,6 +1,6 @@
 <div [ngClass]="{openSidenavWrapper: getOpen()}" class="sidenavWrapper" (click)="closeSidenav()">
   <div id="mySidenav" [ngClass]="{openSidenav: getOpen()}" class="sidenav" (click)="onEvent($event)">
-    <h1>Create Invoice</h1>
+    <h1>{{ id === '' ? 'Create Invoice' : ('Edit #' + id)}}</h1>
 
     <form class="formContainer">
 
@@ -30,24 +30,6 @@
               <input type="text" name="country" [ngModel]="senderAddress?.country" (ngModelChange)="senderAddress && senderAddress.country = $event">
             </div>
           </div>
-
-          <div class="twoInputWrapper">
-
-            <div class="inputWrapper">
-              <label>Invoice Date</label>
-              <input type="date" name="invoiceDate" [(ngModel)]="invoiceDate">
-            </div>
-            
-            <div class="inputWrapper">
-              <label>Payment Terms</label>
-              <input type="text" name="paymentTerms" [(ngModel)]="paymentTerms">
-            </div>
-          </div>
-
-          <div class="inputWrapper">
-            <label>Description</label>
-            <input type="text" name="description" [(ngModel)]="description" placeholder="e.g. Graphic Design Service">
-          </div>
         </div>
 
         <div class="billWrapper">
@@ -55,12 +37,12 @@
 
           <div class="inputWrapper">
             <label>Client's Name</label>
-            <input type="text" name="streetAddress" [(ngModel)]="clientName">
+            <input type="text" name="clientName" [(ngModel)]="clientName">
           </div>
 
           <div class="inputWrapper">
             <label>Client's Email</label>
-            <input type="email" name="streetAddress" placeholder="e.g. email@example.com" [(ngModel)]="clientEmail">
+            <input type="email" name="clientEmail" placeholder="e.g. email@example.com" [(ngModel)]="clientEmail">
           </div>
         
           <div class="inputWrapper">
@@ -102,6 +84,24 @@
             <label>Description</label>
             <input type="text" name="description" [(ngModel)]="description" placeholder="e.g. Graphic Design Service">
           </div>
+        </div>
+
+        <div class="twoInputWrapper">
+
+          <div class="inputWrapper">
+            <label>Invoice Date</label>
+            <input type="date" name="invoiceDate" [(ngModel)]="invoiceDate">
+          </div>
+          
+          <div class="inputWrapper">
+            <label>Payment Terms</label>
+            <input type="text" name="paymentTerms" [(ngModel)]="paymentTerms">
+          </div>
+        </div>
+
+        <div class="inputWrapper">
+          <label>Description</label>
+          <input type="text" name="description" [(ngModel)]="description" placeholder="e.g. Graphic Design Service">
         </div>
 
         <h2>Item List</h2>
@@ -156,12 +156,17 @@
 
     <div class="actionButtons">
       <div>
-        <button class="discard" (click)="closeSidenav()">Discard</button>
+        <button *ngIf="id === ''" class="discard" (click)="closeSidenav()">Discard</button>
       </div>
       
-      <div class="right">
+      <div *ngIf="id === ''" class="right">
         <button class="draft" (click)="saveInvoice('draft')">Save as Draft</button>
         <button class="send" (click)="saveInvoice('pending')">Save & Send</button>
+      </div>
+
+      <div *ngIf="id !== ''" class="right">
+        <button class="discard" (click)="saveInvoice('draft')">Cancel</button>
+        <button class="send" (click)="editInvoice()">Save Changes</button>
       </div>
     </div>
   </div>

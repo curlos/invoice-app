@@ -4,6 +4,7 @@ import { InvoiceService } from '../../services/invoice.service';
 import { ActivatedRoute } from '@angular/router';
 import { Invoice } from '../../types/Invoice';
 import { Router } from '@angular/router';
+import { SidenavService } from '../../services/sidenav.service';
 
 @Component({
   selector: 'app-invoice-item',
@@ -15,7 +16,7 @@ export class InvoiceItemComponent implements OnInit {
   invoice!: Invoice
   loading: boolean = true
 
-  constructor(private route: ActivatedRoute, private invoiceService: InvoiceService, private router: Router, private deleteModalService: DeleteModalService) { }
+  constructor(private route: ActivatedRoute, private invoiceService: InvoiceService, private router: Router, private sidenavService: SidenavService, private deleteModalService: DeleteModalService) { }
 
   ngOnInit(): void {
     this.id = this.route.snapshot.paramMap.get('id') || ''
@@ -29,6 +30,10 @@ export class InvoiceItemComponent implements OnInit {
 
   getOpenDeleteModal(): boolean {
     return this.deleteModalService.getOpen()
+  }
+
+  openSidenav(): void {
+    this.sidenavService.openSidenav()
   }
 
   openDeleteModal(): void {

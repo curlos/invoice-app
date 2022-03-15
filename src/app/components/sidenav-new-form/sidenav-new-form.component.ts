@@ -4,6 +4,7 @@ import { Component, OnInit, Output, EventEmitter, Input } from '@angular/core';
 import { SidenavService } from '../../services/sidenav.service';
 import { Address } from '../../types/address';
 import { Item } from '../../types/item';
+import { ActivatedRoute } from '@angular/router';
 
 
 @Component({
@@ -14,6 +15,8 @@ import { Item } from '../../types/item';
 
 ) export class SidenavNewFormComponent implements OnInit {
   @Input() invoices!: Invoice[]
+  id: string = ''
+
   senderAddress: Address = {
     street: '',
     city: '',
@@ -44,12 +47,37 @@ import { Item } from '../../types/item';
   }
 
 
-  constructor(private sidenavService: SidenavService, private invoiceService: InvoiceService) {
-
+  constructor(private route: ActivatedRoute, private sidenavService: SidenavService, private invoiceService: InvoiceService) {
+    this.fillInputValues()
   }
 
   ngOnInit(): void {
 
+  }
+
+  fillInputValues(): void {
+    this.id = this.route.snapshot.paramMap.get('id') || ''
+
+    console.log(this.id)
+
+    if (this.id !== '') {
+      this.invoiceService.getInvoice(this.id).subscribe((invoice) => {
+        console.log(invoice)
+
+        this.senderAddress = invoice.senderAddress
+
+        this.clientAddress = invoice.clientAddress
+
+        this.clientName = invoice.clientName
+        this.clientEmail = invoice.clientEmail
+
+        this.invoiceDate = invoice.paymentDue
+        this.description = invoice.description
+        this.paymentTerms = String(invoice.paymentTerms)
+        this.items = invoice.items
+        this.total = this.getTotal()
+      })
+    }
   }
 
   getOpen() {
@@ -114,5 +142,9 @@ import { Item } from '../../types/item';
       this.invoices.push(invoice)
       this.closeSidenav()
     })
+  }
+
+  editInvoice(): void {
+
   }
 }

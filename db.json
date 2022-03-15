@@ -63,48 +63,6 @@
       "total": 3102.04
     },
     {
-      "paymentDue": "2022-03-15T04:45:43.705Z",
-      "description": "Los Angeles Lakers vs. Toronto Raptors",
-      "paymentTerms": 1,
-      "status": "pending",
-      "senderAddress": {
-        "street": "12959 SW 51st ST",
-        "city": "Miami",
-        "postCode": "33175",
-        "country": "United States"
-      },
-      "clientAddress": {
-        "street": "12959 SW 51st ST",
-        "city": "Miami",
-        "postCode": "33175",
-        "country": "United States"
-      },
-      "items": [
-        {
-          "name": "Hat",
-          "quantity": 2,
-          "price": 20.18,
-          "total": 40.36
-        },
-        {
-          "name": "Hotdogs",
-          "quantity": 5,
-          "price": 13,
-          "total": 65
-        },
-        {
-          "name": "Drinks",
-          "quantity": 7,
-          "price": 16.78,
-          "total": 117.46000000000001
-        }
-      ],
-      "total": 222.82,
-      "clientName": "LeBron James",
-      "clientEmail": "lbj@gmail.com",
-      "id": "ZkMCgAj"
-    },
-    {
       "paymentDue": "2022-03-15T04:57:03.602Z",
       "description": "",
       "paymentTerms": 1,
