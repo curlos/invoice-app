@@ -18,6 +18,8 @@ import { CheckboxComponent } from './components/checkbox/checkbox.component';
 import { InvoiceItemComponent } from './pages/invoice-item/invoice-item.component';
 import { SidenavNewFormComponent } from './components/sidenav-new-form/sidenav-new-form.component';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
+import { DeleteModalComponent } from './components/delete-modal/delete-modal.component';
+import { PaymentTermsDropdownComponent } from './components/payment-terms-dropdown/payment-terms-dropdown.component';
 
 @NgModule({
   declarations: [
@@ -28,7 +30,9 @@ import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
     SmallInvoiceItemComponent,
     CheckboxComponent,
     InvoiceItemComponent,
-    SidenavNewFormComponent
+    SidenavNewFormComponent,
+    DeleteModalComponent,
+    PaymentTermsDropdownComponent
   ],
   imports: [
     BrowserModule,

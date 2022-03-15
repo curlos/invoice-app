@@ -1,3 +1,4 @@
+import { DeleteModalService } from './../../services/delete-modal.service';
 import { Component, Input, OnInit } from '@angular/core';
 import { InvoiceService } from '../../services/invoice.service';
 import { ActivatedRoute } from '@angular/router';
@@ -14,7 +15,7 @@ export class InvoiceItemComponent implements OnInit {
   invoice!: Invoice
   loading: boolean = true
 
-  constructor(private route: ActivatedRoute, private invoiceService: InvoiceService, private router: Router) { }
+  constructor(private route: ActivatedRoute, private invoiceService: InvoiceService, private router: Router, private deleteModalService: DeleteModalService) { }
 
   ngOnInit(): void {
     this.id = this.route.snapshot.paramMap.get('id') || ''
@@ -24,6 +25,14 @@ export class InvoiceItemComponent implements OnInit {
 
       console.log(invoice)
     })
+  }
+
+  getOpenDeleteModal(): boolean {
+    return this.deleteModalService.getOpen()
+  }
+
+  openDeleteModal(): void {
+    this.deleteModalService.openModal()
   }
 
   getRoundedNum(total: number) {
