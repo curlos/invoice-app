@@ -38,12 +38,4 @@ export class InvoiceItemComponent implements OnInit {
   getRoundedNum(total: number) {
     return Math.round((total + Number.EPSILON) * 100) / 100
   }
-
-  deleteInvoice(): void {
-    console.log('deleting')
-    this.invoiceService.deleteInvoice(this.invoice).subscribe(() => {
-      console.log(this.invoice)
-      this.router.navigate(['/'])
-    })
-  }
 }

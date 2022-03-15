@@ -1,6 +1,6 @@
 <div class="container">
   <app-sidebar></app-sidebar>
-  <app-delete-modal *ngIf="getOpenDeleteModal()"></app-delete-modal>
+  <app-delete-modal *ngIf="getOpenDeleteModal()" [invoice]="invoice"></app-delete-modal>
 
   <div class="invoiceItemWrapper">
     <div routerLink="/" class="backLink">
