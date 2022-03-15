@@ -26,4 +26,8 @@ export class InvoiceService {
     const url = `${this.apiUrl}/${id}`
     return this.http.get<Invoice>(url)
   }
+
+  saveInvoice(invoice: Invoice): Observable<Invoice> {
+    return this.http.post<Invoice>(this.apiUrl, invoice, httpOptions)
+  }
 }

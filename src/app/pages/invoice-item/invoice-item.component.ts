@@ -24,4 +24,8 @@ export class InvoiceItemComponent implements OnInit {
       console.log(invoice)
     })
   }
+
+  getRoundedNum(total: number) {
+    return Math.round((total + Number.EPSILON) * 100) / 100
+  }
 }

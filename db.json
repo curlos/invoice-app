@@ -25,11 +25,11 @@
         {
           "name": "Brand Guidelines",
           "quantity": 1,
-          "price": 1800.90,
-          "total": 1800.90
+          "price": 1800.9,
+          "total": 1800.9
         }
       ],
-      "total": 1800.90
+      "total": 1800.9
     },
     {
       "id": "XM9141",
@@ -56,17 +56,17 @@
         {
           "name": "Banner Design",
           "quantity": 1,
-          "price": 156.00,
-          "total": 156.00
+          "price": 156,
+          "total": 156
         },
         {
           "name": "Email Design",
           "quantity": 2,
-          "price": 200.00,
-          "total": 400.00
+          "price": 200,
+          "total": 400
         }
       ],
-      "total": 556.00
+      "total": 556
     },
     {
       "id": "RG0314",
@@ -161,8 +161,8 @@
         {
           "name": "Brand Guidelines",
           "quantity": 1,
-          "price": 2500.00,
-          "total": 2500.00
+          "price": 2500,
+          "total": 2500
         }
       ],
       "total": 4032.33
@@ -228,6 +228,140 @@
         }
       ],
       "total": 3102.04
+    },
+    {
+      "paymentDue": "2022-03-15",
+      "description": "",
+      "paymentTerms": 1,
+      "status": "pending",
+      "senderAddress": {
+        "street": "",
+        "city": "",
+        "postCode": "",
+        "country": ""
+      },
+      "clientAddress": {
+        "street": "",
+        "city": "",
+        "postCode": "",
+        "country": ""
+      },
+      "items": [],
+      "total": 0,
+      "clientName": "Carlos Martinez",
+      "clientEmail": "",
+      "id": "09Jf0Pc"
+    },
+    {
+      "paymentDue": "2022-03-15T04:45:43.705Z",
+      "description": "Los Angeles Lakers vs. Toronto Raptors",
+      "paymentTerms": 1,
+      "status": "pending",
+      "senderAddress": {
+        "street": "12959 SW 51st ST",
+        "city": "Miami",
+        "postCode": "33175",
+        "country": "United States"
+      },
+      "clientAddress": {
+        "street": "12959 SW 51st ST",
+        "city": "Miami",
+        "postCode": "33175",
+        "country": "United States"
+      },
+      "items": [
+        {
+          "name": "Hat",
+          "quantity": 2,
+          "price": 20.18,
+          "total": 40.36
+        },
+        {
+          "name": "Hotdogs",
+          "quantity": 5,
+          "price": 13,
+          "total": 65
+        },
+        {
+          "name": "Drinks",
+          "quantity": 7,
+          "price": 16.78,
+          "total": 117.46000000000001
+        }
+      ],
+      "total": 222.82,
+      "clientName": "LeBron James",
+      "clientEmail": "lbj@gmail.com",
+      "id": "ZkMCgAj"
+    },
+    {
+      "paymentDue": "2022-03-15T04:56:58.224Z",
+      "description": "",
+      "paymentTerms": 1,
+      "status": "pending",
+      "senderAddress": {
+        "street": "",
+        "city": "",
+        "postCode": "",
+        "country": ""
+      },
+      "clientAddress": {
+        "street": "",
+        "city": "",
+        "postCode": "",
+        "country": ""
+      },
+      "items": [],
+      "total": 0,
+      "clientName": "",
+      "clientEmail": "",
+      "id": "j46xclW"
+    },
+    {
+      "paymentDue": "2022-03-15T04:57:03.602Z",
+      "description": "",
+      "paymentTerms": 1,
+      "status": "pending",
+      "senderAddress": {
+        "street": "",
+        "city": "",
+        "postCode": "",
+        "country": ""
+      },
+      "clientAddress": {
+        "street": "",
+        "city": "",
+        "postCode": "",
+        "country": ""
+      },
+      "items": [],
+      "total": 0,
+      "clientName": "",
+      "clientEmail": "",
+      "id": "L7u_pPt"
+    },
+    {
+      "paymentDue": "2022-03-15T05:01:55.326Z",
+      "description": "",
+      "paymentTerms": 1,
+      "status": "pending",
+      "senderAddress": {
+        "street": "",
+        "city": "",
+        "postCode": "",
+        "country": ""
+      },
+      "clientAddress": {
+        "street": "",
+        "city": "",
+        "postCode": "",
+        "country": ""
+      },
+      "items": [],
+      "total": 0,
+      "clientName": "bum",
+      "clientEmail": "",
+      "id": "4dgsiZL"
     }
   ]
 }

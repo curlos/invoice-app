@@ -1,4 +1,6 @@
-import { Component, OnInit, Output, EventEmitter } from '@angular/core';
+import { Invoice } from './../../types/Invoice';
+import { InvoiceService } from './../../services/invoice.service';
+import { Component, OnInit, Output, EventEmitter, Input } from '@angular/core';
 import { SidenavService } from '../../services/sidenav.service';
 import { Address } from '../../types/address';
 import { Item } from '../../types/item';
@@ -11,6 +13,7 @@ import { Item } from '../../types/item';
 }
 
 ) export class SidenavNewFormComponent implements OnInit {
+  @Input() invoices!: Invoice[]
   senderAddress: Address = {
     street: '',
     city: '',
@@ -25,12 +28,12 @@ import { Item } from '../../types/item';
     country: ''
   }
 
-  clientName: String = ''
-  clientEmail: String = ''
+  clientName: string = ''
+  clientEmail: string = ''
 
-  invoiceDate: Date = new Date()
-  description: String = ''
-  paymentTerms: String = ''
+  invoiceDate: string = new Date().toISOString()
+  description: string = ''
+  paymentTerms: string = ''
   items: Item[] = []
   total: Number = 0
   paymentTermOptions: Object = {
@@ -41,7 +44,7 @@ import { Item } from '../../types/item';
   }
 
 
-  constructor(private sidenavService: SidenavService) {
+  constructor(private sidenavService: SidenavService, private invoiceService: InvoiceService) {
 
   }
 
@@ -83,28 +86,35 @@ import { Item } from '../../types/item';
   }
 
   changeItemTotal(i: number): void {
-    console.log('Changing total')
-    console.log(i)
-    this.items[i].total = Number(this.items[i].quantity) * Number(this.items[i].price)
+    const unroundedTotal = Number(this.items[i].quantity) * Number(this.items[i].price)
+    this.items[i].total = Math.round((unroundedTotal + Number.EPSILON) * 100) / 100
   }
 
   getTotal(): number {
     return this.items.map((item) => item.total).reduce((prev, curr) => prev + curr, 0)
   }
 
-  sendInvoice(): void {
+  saveInvoice(status: string): void {
 
     const newInvoice = {
       paymentDue: this.invoiceDate,
       description: this.description,
       paymentTerms: 1,
-      status: 'draft',
+      status: status,
       senderAddress: this.senderAddress,
       clientAddress: this.clientAddress,
       items: this.items,
-      total: this.getTotal()
+      total: this.getTotal(),
+      clientName: this.clientName,
+      clientEmail: this.clientEmail
     }
 
-    console.log(this.items)
+    this.invoiceService.saveInvoice(newInvoice).subscribe((invoice) => {
+      console.log(invoice)
+      this.invoices.push(invoice)
+      this.closeSidenav()
+    })
+
+    console.log(newInvoice)
   }
 }

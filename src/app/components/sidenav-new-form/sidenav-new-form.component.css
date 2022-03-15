@@ -78,6 +78,7 @@ h1 {
 }
 
 h1,
+h2,
 .billHeader {
   padding-left: 5px;
 }
@@ -209,7 +210,7 @@ button.addItem:hover {
 
 .fourInputWrapper {
   grid-template-columns: 3fr 1fr 2fr 2fr;
-  
+
 }
 
 .totalWrapper {
@@ -231,4 +232,8 @@ button.addItem:hover {
 
 .totalWrapper img:hover {
   fill: red;
+}
+
+.addItemWrapper {
+  padding: 5px;
 }

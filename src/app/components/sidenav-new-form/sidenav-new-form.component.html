@@ -2,7 +2,7 @@
   <div id="mySidenav" [ngClass]="{openSidenav: getOpen()}" class="sidenav" (click)="onEvent($event)">
     <h1>Create Invoice</h1>
 
-    <form class="formContainer" (ngSubmit)="sendInvoice()">
+    <form class="formContainer">
 
       <div>
 
@@ -145,13 +145,12 @@
           </div>
         </div>
 
-        <button class="addItem" (click)="addNewItem()">
-          <img src="/assets/images/icon-plus.svg" alt="" />
-          <span>Add New Item</span>
-        </button>
-
-        
-
+        <div class="addItemWrapper">
+          <button class="addItem" (click)="addNewItem()">
+            <img src="/assets/images/icon-plus.svg" alt="" />
+            <span>Add New Item</span>
+          </button>
+        </div>
       </div>
     </form>
 
@@ -161,8 +160,8 @@
       </div>
       
       <div class="right">
-        <button class="draft">Save as Draft</button>
-        <button class="send" (click)="sendInvoice()">Save & Send</button>
+        <button class="draft" (click)="saveInvoice('draft')">Save as Draft</button>
+        <button class="send" (click)="saveInvoice('pending')">Save & Send</button>
       </div>
     </div>
   </div>

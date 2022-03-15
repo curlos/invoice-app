@@ -1,6 +1,8 @@
+import { Item } from './item';
+
 export interface Invoice {
-  id: string;
-  createdAt: string;
+  id?: string;
+  createdAt?: string;
   paymentDue: string;
   description: string;
   paymentTerms: number;
@@ -19,13 +21,6 @@ export interface Invoice {
     postCode: string;
     country: string;
   },
-  items: [
-    {
-      name: string;
-      quantity: number;
-      price: number;
-      total: number;
-    }
-  ],
+  items: Item[],
   total: number
 }

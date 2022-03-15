@@ -1,6 +1,6 @@
 <div class="container" (newInvoiceClick)="onNewInvoiceClick()">
   <app-sidebar></app-sidebar>
-  <app-sidenav-new-form></app-sidenav-new-form>
+  <app-sidenav-new-form [invoices]="invoices"></app-sidenav-new-form>
 
   <div class="invoicesWrapper">
     <div class="header">
