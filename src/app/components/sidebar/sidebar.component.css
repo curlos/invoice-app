@@ -47,8 +47,8 @@
     position: sticky;
     flex-direction: row;
     width: 100vw;
+    height: 10vh;
     max-width: 100%;
-    height: auto;
     border-radius: 0px;
   }
 

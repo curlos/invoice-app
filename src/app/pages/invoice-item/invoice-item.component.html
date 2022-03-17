@@ -69,7 +69,7 @@
 
             <div>
               <h4>Payment Due</h4>
-              <div class="detail">{{ invoice.paymentDue }}</div>
+              <div class="detail">{{ getFormattedDate(invoice.paymentDue) }}</div>
             </div>
           </div>
 
@@ -107,8 +107,8 @@
             <tr *ngFor="let item of invoice.items">
               <td class="name">{{ item.name }}</td>
               <td class="quantity">{{ item.quantity }}</td>
-              <td class="price">${{ item.price }}</td>
-              <td class="total">${{ getRoundedNum(item.total) }}</td>
+              <td class="price">${{ getNumWithCommas(getRoundedNum(item.price)) }}</td>
+              <td class="total">${{ getNumWithCommas(getRoundedNum(item.total)) }}</td>
             </tr>
             
           </table>
@@ -116,7 +116,7 @@
 
         <div class="amountDue">
           <div>Amount Due</div>
-          <h2>${{ invoice.total }}</h2>
+          <h2>${{ getNumWithCommas(getRoundedNum(invoice.total))}}</h2>
         </div>
       </div>
     </div>

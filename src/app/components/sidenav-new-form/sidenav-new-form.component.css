@@ -60,7 +60,6 @@ h1 {
 }
 
 .formContainer {
-  flex: 1;
   margin: 30px 0px;
   overflow-x: auto;
   padding-top: 10px;
@@ -238,4 +237,14 @@ button.addItem:hover {
   padding: 5px;
 }
 
-@media only screen and (max-width: 768px) {}
+input[type="date"] {
+  background-color: #FFFFFF;
+}
+
+@media only screen and (max-width: 768px) {
+
+  .sidenav {
+    height: 90vh;
+    padding: 40px;
+  }
+}

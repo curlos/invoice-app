@@ -5,6 +5,7 @@ import { ActivatedRoute } from '@angular/router';
 import { Invoice } from '../../types/Invoice';
 import { Router } from '@angular/router';
 import { SidenavService } from '../../services/sidenav.service';
+import * as moment from 'moment';
 
 @Component({
   selector: 'app-invoice-item',
@@ -40,7 +41,15 @@ export class InvoiceItemComponent implements OnInit {
     this.deleteModalService.openModal()
   }
 
+  getFormattedDate(dateString: string): string {
+    return moment(dateString).format('LL')
+  }
+
   getRoundedNum(total: number) {
     return Math.round((total + Number.EPSILON) * 100) / 100
+  }
+
+  getNumWithCommas(num: any) {
+    return Number(num).toLocaleString()
   }
 }
