@@ -1,0 +1,2 @@
+id,paymentDue,description,paymentTerms,clientName,clientEmail,status,senderAddress/street,senderAddress/city,senderAddress/postCode,senderAddress/country,clientAddress/street,clientAddress/city,clientAddress/postCode,clientAddress/country,total
+1,2021-08-19,Re-branding,1,Jensen Huang,jensenh@mail.com,paid,19 Union Terrace,London,E1 3EZ,United Kingdom,106 Kendell Street,Sharrington,NR24 5WQ,United Kingdom,1800.90

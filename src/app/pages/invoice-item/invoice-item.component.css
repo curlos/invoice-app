@@ -6,7 +6,7 @@
 
 .invoiceItemWrapper {
   margin-left: 100px;
-  padding: 50px;
+  padding: 70px;
 }
 
 .backLink {
@@ -114,6 +114,15 @@
 
 .delete:hover {
   background-color: rgb(255, 151, 151);
+}
+
+.statusButton {
+  background-color: rgb(124, 93, 250);
+  color: #FFFFFF;
+}
+
+.statusButton:hover {
+  background-color: rgb(146, 119, 255);
 }
 
 .details {
@@ -268,4 +277,12 @@ td.total {
 
 .amountDue h2 {
   font-size: 32px;
+}
+
+@media only screen and (max-width: 768px) {
+
+  .invoiceItemWrapper {
+    margin-left: 0px;
+    padding: 50px;
+  }
 }

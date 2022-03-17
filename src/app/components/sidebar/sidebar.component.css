@@ -41,3 +41,18 @@
 .avatar {
   border-top: 1px solid gray;
 }
+
+@media only screen and (max-width: 768px) {
+  .container {
+    position: sticky;
+    flex-direction: row;
+    width: 100vw;
+    max-width: 100%;
+    height: auto;
+    border-radius: 0px;
+  }
+
+  .end {
+    display: flex;
+  }
+}

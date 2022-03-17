@@ -34,6 +34,7 @@
         <div class="actionButtons">
           <button class="edit" (click)="openSidenav()">Edit</button>
           <button class="delete" (click)="openDeleteModal()">Delete</button>
+          <button *ngIf="invoice.status !== 'paid'" class="statusButton" (click)="openDeleteModal()">Mark as Paid</button>
         </div>
       </div>
 

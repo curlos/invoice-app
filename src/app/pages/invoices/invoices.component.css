@@ -60,3 +60,14 @@
 .newInvoice:hover {
   background-color: rgb(164, 142, 255);
 }
+
+@media only screen and (max-width: 768px) {
+  .container {
+    display: block;
+  }
+
+  .invoicesWrapper {
+    margin-left: 0px;
+    padding: 50px;
+  }
+}
