@@ -36,6 +36,8 @@ button {
   gap: 10px;
   font-size: 12px;
   font-weight: bold;
+  margin-bottom: 10px;
+  text-transform: capitalize;
 }
 
 .option:last-of-type {

@@ -246,7 +246,8 @@ input[type="date"] {
   background-color: #FFFFFF;
 }
 
-.mobile {
+.mobile,
+.itemWrapperMobile {
   display: none;
 }
 

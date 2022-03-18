@@ -12,7 +12,6 @@ export class SmallInvoiceItemComponent implements OnInit {
   constructor() { }
 
   ngOnInit(): void {
-    console.log(this.invoice)
   }
 
   getFormattedDate(): string {

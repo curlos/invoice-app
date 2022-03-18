@@ -1,6 +1,6 @@
 import { Invoice } from './../../types/Invoice';
 import { InvoiceService } from './../../services/invoice.service';
-import { Component, OnInit, Output, EventEmitter, Input } from '@angular/core';
+import { Component, OnInit, Input } from '@angular/core';
 import { SidenavService } from '../../services/sidenav.service';
 import { Address } from '../../types/address';
 import { Item } from '../../types/item';

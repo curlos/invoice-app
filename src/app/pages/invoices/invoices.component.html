@@ -10,7 +10,7 @@
       </div>
       
       <div class="right">
-        <app-filter-dropdown></app-filter-dropdown>
+        <app-filter-dropdown [filterOptions]="getFilterOptions()" [filters]="getFilters()" (editFiltersClick)="editFilters($event)"></app-filter-dropdown>
         <button class="newInvoice" (click)="onNewInvoiceClick()">
           <img src="/assets/images/icon-plus.svg" alt="plus icon" />
           <span>New Invoice</span>
@@ -19,7 +19,7 @@
     </div>
     
     <app-small-invoice-item
-      *ngFor="let invoice of invoices"
+      *ngFor="let invoice of getFilteredInvoices()"
       [invoice]="invoice"
     >
 

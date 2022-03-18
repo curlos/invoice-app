@@ -1,4 +1,5 @@
-import { Component, OnInit } from '@angular/core';
+
+import { Component, Input, OnInit, EventEmitter, Output } from '@angular/core';
 
 @Component({
   selector: 'app-checkbox',
@@ -7,14 +8,16 @@ import { Component, OnInit } from '@angular/core';
 })
 export class CheckboxComponent implements OnInit {
   selected: boolean = false
-
-  constructor() { }
+  @Input() filterOption: String = ''
+  @Output() editFiltersClick = new EventEmitter<String>()
 
   ngOnInit(): void {
   }
 
-  toggleSelect(): void {
+  editFilters() {
+    console.log('bum')
     this.selected = !this.selected
+    this.editFiltersClick.emit(this.filterOption)
   }
 
 }
