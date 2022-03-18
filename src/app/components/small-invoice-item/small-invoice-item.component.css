@@ -83,3 +83,44 @@
 .draft.circle {
   background-color: #373B53;
 }
+
+.rightLeftMobile {
+  display: none;
+}
+
+@media only screen and (max-width: 768px) {
+
+  .container {
+    display: block;
+  }
+
+
+  .left,
+  .right {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+  }
+
+  .left {
+    margin-bottom: 20px;
+  }
+
+  .left .paymentDue,
+  .right .total {
+    display: none;
+  }
+
+  .right img {
+    display: none;
+  }
+
+  .rightLeftMobile {
+    display: block
+  }
+
+  .rightLeftMobile .total {
+    display: block;
+    margin-top: 5px;
+  }
+}

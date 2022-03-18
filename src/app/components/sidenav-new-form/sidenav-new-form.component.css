@@ -172,12 +172,17 @@ button.addItem:hover {
   gap: 10px;
 }
 
+.actionsButtons .right button {
+  height: 100%;
+}
+
 .actionButtons button {
   border: none;
   padding: 15px 25px;
   border-radius: 25px;
   font-weight: bold;
   cursor: pointer;
+  font-size: 0.75rem;
 }
 
 .discard {
@@ -241,10 +246,67 @@ input[type="date"] {
   background-color: #FFFFFF;
 }
 
+.mobile {
+  display: none;
+}
+
 @media only screen and (max-width: 768px) {
+  .sidenav {
+    height: calc(100vh - 80px);
+    padding: 40px;
+    margin-top: 80px;
+    margin-bottom: 80px;
+  }
+}
+
+@media only screen and (max-width: 540px) {
+  .mobile {
+    display: block;
+  }
 
   .sidenav {
-    height: 90vh;
     padding: 40px;
+    border-radius: 0px;
+  }
+
+  .openSidenav {
+    width: 100%;
+  }
+
+  .itemWrapperMobile {
+    display: block;
+  }
+
+  .itemWrapperMobile,
+  .threeInputWrapper {
+    grid-template-columns: 1fr 1fr 1fr;
+  }
+
+  .threeInputWrapper.mobile {
+    display: grid;
+  }
+
+  .threeInputWrapper.mobile .inputWrapper {
+    padding: 0px;
+    padding-left: 5px;
+    margin: 0;
+  }
+
+  .fourInputWrapper {
+    display: none;
+  }
+
+  .inputWrapper {
+    width: 100%;
+  }
+}
+
+@media only screen and (max-width: 420px) {
+  .sidenav {
+    padding: 20px;
+  }
+
+  .actionButtons button {
+    padding: 10px 15px;
   }
 }

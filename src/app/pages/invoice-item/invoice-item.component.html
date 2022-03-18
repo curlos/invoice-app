@@ -5,122 +5,135 @@
   
   <app-sidenav-new-form></app-sidenav-new-form>
 
-  <div class="invoiceItemWrapper">
-    <div routerLink="/" class="backLink">
-      <img src="/assets/images/icon-arrow-left.svg" alt="" />
-      <span>Go back</span>
-    </div>
-
-    <div *ngIf="!loading" class="invoiceInfoWrapper">
-      <div class="statusActions">
-        <div class="statusWrapper">
-          <div>Status</div>
-          <div [ngClass]="{
-            'paid': invoice.status === 'paid',
-            'pending': invoice.status === 'pending',
-            'draft': invoice.status === 'draft'}" class="status">
-      
+  <div class="invoiceWrapper">
+    <div class="invoiceItemWrapper">
+      <div routerLink="/" class="backLink">
+        <img src="/assets/images/icon-arrow-left.svg" alt="" />
+        <span>Go back</span>
+      </div>
+  
+      <div *ngIf="!loading" class="invoiceInfoWrapper">
+        <div class="statusActions">
+          <div class="statusWrapper">
+            <div>Status</div>
             <div [ngClass]="{
               'paid': invoice.status === 'paid',
               'pending': invoice.status === 'pending',
-              'draft': invoice.status === 'draft'}" class="circle"></div>
-              
-            <div>
-              {{ invoice.status.slice(0,1).toUpperCase() + invoice.status.slice(1) }}
-            </div>
-          </div>
-        </div>
-
-        <div class="actionButtons">
-          <button class="edit" (click)="openSidenav()">Edit</button>
-          <button class="delete" (click)="openDeleteModal()">Delete</button>
-          <button *ngIf="invoice.status !== 'paid'" class="statusButton" (click)="openDeleteModal()">Mark as Paid</button>
-        </div>
-      </div>
-
-      <div class="details">
-        <div class="top">
-          <div class="left">
-            <div class="invoiceId">
-              <span>#</span>
-              {{ invoice.id }}
-            </div>
-
-            <p class="description">
-              Re-branding
-            </p>
-          </div>
-
-          <div class="right">
-            <div>{{ invoice.senderAddress.street }}</div>
-            <div>{{ invoice.senderAddress.city }}</div>
-            <div>{{ invoice.senderAddress.postCode }}</div>
-            <div>{{ invoice.senderAddress.country }}</div>
-          </div>
-        </div>
-
-
-        <div class="middle">
-          <div class="start">
-            <div>
-              <h4>Invoice Date</h4>
-              <div class="detail">{{ invoice.createdAt }}</div>
-            </div>
-
-            <div>
-              <h4>Payment Due</h4>
-              <div class="detail">{{ getFormattedDate(invoice.paymentDue) }}</div>
-            </div>
-          </div>
-
-          <div class="middleMiddle">
-            <h4>Bill to</h4>
-
-            <div>
-              <div class="detail">{{ invoice.clientName }}</div>
-              <div class="address">
-                <div>{{ invoice.clientAddress.street }}</div>
-                <div>{{ invoice.clientAddress.city }}</div>
-                <div>{{ invoice.clientAddress.postCode }}</div>
-                <div>{{ invoice.clientAddress.country }}</div>
+              'draft': invoice.status === 'draft'}" class="status">
+        
+              <div [ngClass]="{
+                'paid': invoice.status === 'paid',
+                'pending': invoice.status === 'pending',
+                'draft': invoice.status === 'draft'}" class="circle"></div>
+                
+              <div>
+                {{ invoice.status.slice(0,1).toUpperCase() + invoice.status.slice(1) }}
               </div>
             </div>
           </div>
-
-          <div class="">
-            <div>
-              <h4>Sent to</h4>
-              <div class="detail">{{ invoice.clientEmail }}</div>
-            </div>
+  
+          <div class="actionButtons">
+            <button class="edit" (click)="openSidenav()">Edit</button>
+            <button class="delete" (click)="openDeleteModal()">Delete</button>
+            <button *ngIf="invoice.status !== 'paid'" class="statusButton" (click)="openDeleteModal()">Mark as Paid</button>
           </div>
         </div>
-
-        <div class="end">
-          <table>
-            <tr>
-              <th class="name">Item Name</th>
-              <th class="quantity">QTY.</th>
-              <th class="price">Price</th>
-              <th class="total">Total</th>
-            </tr>
   
-            <tr *ngFor="let item of invoice.items">
-              <td class="name">{{ item.name }}</td>
-              <td class="quantity">{{ item.quantity }}</td>
-              <td class="price">${{ getNumWithCommas(getRoundedNum(item.price)) }}</td>
-              <td class="total">${{ getNumWithCommas(getRoundedNum(item.total)) }}</td>
-            </tr>
-            
-          </table>
-        </div>
+        <div class="details">
+          <div class="top">
+            <div class="left">
+              <div class="invoiceId">
+                <span>#</span>
+                {{ invoice.id }}
+              </div>
+  
+              <p class="description">
+                Re-branding
+              </p>
+            </div>
+  
+            <div class="right">
+              <div>{{ invoice.senderAddress.street }}</div>
+              <div>{{ invoice.senderAddress.city }}</div>
+              <div>{{ invoice.senderAddress.postCode }}</div>
+              <div>{{ invoice.senderAddress.country }}</div>
+            </div>
+          </div>
+  
+  
+          <div class="middle">
+            <div class="start">
+              <div>
+                <h4>Invoice Date</h4>
+                <div class="detail">{{ invoice.createdAt }}</div>
+              </div>
+  
+              <div>
+                <h4>Payment Due</h4>
+                <div class="detail">{{ getFormattedDate(invoice.paymentDue) }}</div>
+              </div>
+            </div>
+  
+            <div class="middleMiddle">
+              <h4>Bill to</h4>
+  
+              <div>
+                <div class="detail">{{ invoice.clientName }}</div>
+                <div class="address">
+                  <div>{{ invoice.clientAddress.street }}</div>
+                  <div>{{ invoice.clientAddress.city }}</div>
+                  <div>{{ invoice.clientAddress.postCode }}</div>
+                  <div>{{ invoice.clientAddress.country }}</div>
+                </div>
+              </div>
+            </div>
+  
+            <div class="">
+              <div>
+                <h4>Sent to</h4>
+                <div class="detail">{{ invoice.clientEmail }}</div>
+              </div>
+            </div>
+          </div>
+  
+          <div class="end">
+            <table>
+              <tr>
+                <th class="name">Item Name</th>
+                <th class="quantity">QTY.</th>
+                <th class="price">Price</th>
+                <th class="total">Total</th>
+              </tr>
+    
+              <tr *ngFor="let item of invoice.items">
+                <td class="name">{{ item.name }}</td>
+                <td class="quantity">{{ item.quantity }}</td>
+                <td class="price">${{ getNumWithCommas(getRoundedNum(item.price)) }}</td>
+                <td class="total">${{ getNumWithCommas(getRoundedNum(item.total)) }}</td>
+              </tr>
+              
+            </table>
 
-        <div class="amountDue">
-          <div>Amount Due</div>
-          <h2>${{ getNumWithCommas(getRoundedNum(invoice.total))}}</h2>
+            <div class="itemsMobile">
+              <div *ngFor="let item of invoice.items" class="itemMobile">
+                <div>{{ item.name }}</div>
+                <div>${{ item.price }}</div>
+              </div>
+            </div>
+          </div>
+  
+          <div class="amountDue">
+            <div>Amount Due</div>
+            <h2>${{ getNumWithCommas(getRoundedNum(invoice.total))}}</h2>
+          </div>
         </div>
       </div>
     </div>
-
-
+  
+    <div class="bottomActionButtons">
+      <button class="edit" (click)="openSidenav()">Edit</button>
+      <button class="delete" (click)="openDeleteModal()">Delete</button>
+      <button *ngIf="invoice.status !== 'paid'" class="statusButton" (click)="openDeleteModal()">Mark as Paid</button>
+    </div>
   </div>
 </div>

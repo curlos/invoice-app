@@ -14,6 +14,7 @@ export class InvoicesComponent implements OnInit {
   constructor(private invoiceService: InvoiceService, private sidenavService: SidenavService) { }
 
   ngOnInit(): void {
+    window.scrollTo(0, 0)
     this.invoiceService.getInvoices().subscribe((invoices) => {
       this.invoices = invoices
       console.log(invoices)

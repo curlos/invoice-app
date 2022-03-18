@@ -20,6 +20,7 @@ export class InvoiceItemComponent implements OnInit {
   constructor(private route: ActivatedRoute, private invoiceService: InvoiceService, private router: Router, private sidenavService: SidenavService, private deleteModalService: DeleteModalService) { }
 
   ngOnInit(): void {
+    window.scrollTo(0, 0)
     this.id = this.route.snapshot.paramMap.get('id') || ''
     this.invoiceService.getInvoice(this.id).subscribe((invoice) => {
       this.invoice = invoice

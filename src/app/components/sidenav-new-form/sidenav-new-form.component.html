@@ -127,6 +127,47 @@
           </div>
         </div>
 
+        <div *ngFor="let item of items; let i = index" class="itemWrapperMobile">
+          <div *ngIf="items.length > 0" class="inputWrapper mobile">
+            <label>Item Name</label>
+          </div>
+          
+          <div class="inputWrapper">
+            <input type="text" [name]="'itemName' + i" [ngModel]="items[i]?.name" (ngModelChange)="items[i] && items[i].name = $event">
+          </div>
+
+          <div *ngIf="items.length > 0" class="threeInputWrapper mobile">
+            <div class="inputWrapper">
+              <label>Qty.</label>
+            </div>
+  
+            <div class="inputWrapper">
+              <label>Price</label>
+            </div>
+  
+            <div class="inputWrapper">
+              <label>Total</label>
+            </div>
+          </div>
+
+          <div class="threeInputWrapper">
+            <div class="inputWrapper">
+              <input type="text" [name]="'itemQuantity' + i" [ngModel]="items[i]?.quantity" (ngModelChange)="changeItemQuantity(i, $event)">
+            </div>
+  
+            <div class="inputWrapper">
+              <input type="text" [name]="'itemPrice' + i" [ngModel]="items[i]?.price" (ngModelChange)="changeItemPrice(i, $event)">
+            </div>
+  
+            <div class="inputWrapper">
+              <div class="totalWrapper">
+                <div>{{ items[i].total }}</div>
+                <img src="/assets/images/icon-delete.svg" alt="delete icon" />
+              </div>
+            </div>
+          </div>
+        </div>
+
         <div class="addItemWrapper">
           <button class="addItem" (click)="addNewItem()">
             <img src="/assets/images/icon-plus.svg" alt="" />
@@ -147,7 +188,7 @@
       </div>
 
       <div *ngIf="id !== ''" class="right">
-        <button class="discard" (click)="saveInvoice('draft')">Cancel</button>
+        <button class="discard" (click)="closeSidenav()">Cancel</button>
         <button class="send" (click)="editInvoice()">Save Changes</button>
       </div>
     </div>

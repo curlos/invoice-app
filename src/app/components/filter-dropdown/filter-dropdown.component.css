@@ -41,3 +41,9 @@ button {
 .option:last-of-type {
   margin-bottom: 0px;
 }
+
+@media only screen and (max-width: 540px) {
+  .byStatus {
+    display: none;
+  }
+}

@@ -19,6 +19,16 @@
       ${{ invoice.total }}
     </div>
 
+    <div class="rightLeftMobile">
+      <div class="paymentDue">
+        Due {{ getFormattedDate() }}
+      </div>
+      
+      <div class="total">
+        ${{ invoice.total }}
+      </div>
+    </div>
+
     <div [ngClass]="{
       'paid': invoice.status === 'paid',
       'pending': invoice.status === 'pending',

@@ -44,7 +44,7 @@
 
 @media only screen and (max-width: 768px) {
   .container {
-    position: sticky;
+    position: fixed;
     flex-direction: row;
     width: 100vw;
     height: 10vh;
@@ -54,5 +54,21 @@
 
   .end {
     display: flex;
+  }
+}
+
+@media only screen and (max-width: 768px) {
+  .container {
+    height: 80px;
+  }
+}
+
+@media only screen and (max-width: 540px) {
+
+  .logoWrapper img,
+  .wrapper img,
+  .avatar img {
+    height: 30px;
+    width: 30px;
   }
 }

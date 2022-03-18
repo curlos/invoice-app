@@ -84,18 +84,29 @@
   background-color: #373B53;
 }
 
-.actionButtons {
+.actionButtons,
+.bottomActionButtons {
   display: flex;
   align-items: center;
   gap: 10px;
 }
 
-.actionButtons button {
+.actionButtons button,
+.bottomActionButtons button {
   border: none;
   padding: 15px 25px;
   border-radius: 25px;
   font-weight: bold;
   cursor: pointer;
+}
+
+.bottomActionButtons {
+  width: 100%;
+  display: flex;
+  justify-content: flex-end;
+  gap: 10px;
+  background-color: #FFFFFF;
+  padding: 20px;
 }
 
 .edit {
@@ -165,6 +176,7 @@
   align-items: flex-end;
   gap: 7px;
   color: rgb(136, 142, 176);
+  margin-top: 10px;
 }
 
 .middle {
@@ -279,10 +291,74 @@ td.total {
   font-size: 32px;
 }
 
-@media only screen and (max-width: 768px) {
+.invoiceWrapper {
+  display: flex;
+  flex-direction: column;
+  height: 100%;
+  min-height: 100vh;
+  justify-content: space-between;
+}
 
+.bottomActionButtons {
+  display: none;
+}
+
+@media only screen and (max-width: 768px) {
   .invoiceItemWrapper {
     margin-left: 0px;
     padding: 50px;
+  }
+
+  .statusActions {
+    margin-top: 80px;
+  }
+}
+
+.itemsMobile {
+  display: none;
+}
+
+.itemMobile {
+  font-weight: bold;
+  display: flex;
+  width: 100%;
+  justify-content: space-between;
+}
+
+@media only screen and (max-width: 540px) {
+  .invoiceItemWrapper {
+    margin-left: 0px;
+    padding: 20px;
+  }
+
+  .actionButtons {
+    display: none;
+  }
+
+  .bottomActionButtons {
+    display: flex;
+  }
+
+  .top {
+    display: block;
+  }
+
+  .top .right {
+    align-items: flex-start;
+  }
+
+  .middle {
+    grid-template-columns: 1fr 1fr;
+    grid-template-rows: 3fr 1fr;
+    grid-gap: 20px;
+  }
+
+  .end table {
+    display: none;
+  }
+
+  .itemsMobile {
+    display: flex;
+    gap: 20px;
   }
 }

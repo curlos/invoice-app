@@ -11,6 +11,7 @@
   flex-direction: column;
   gap: 15px;
   margin-left: 100px;
+  min-height: 100vh;
 }
 
 .header {
@@ -70,5 +71,16 @@
   .invoicesWrapper {
     margin-left: 0px;
     padding: 50px;
+  }
+
+  .invoicesWrapper .header {
+    margin-top: 80px;
+  }
+}
+
+@media only screen and (max-width: 540px) {
+
+  .invoicesWrapper {
+    padding: 25px;
   }
 }
