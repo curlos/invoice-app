@@ -76,7 +76,7 @@
 
             <div class="inputWrapper">
               <label>Payment Terms</label>
-              <app-payment-terms-dropdown></app-payment-terms-dropdown>
+              <app-payment-terms-dropdown [paymentTermOptions]="paymentTermOptions" [selectedPaymentTerm]="selectedPaymentTerm" (paymentTermChange)="changePaymentTerm($event)"></app-payment-terms-dropdown>
             </div>
             
           </div>

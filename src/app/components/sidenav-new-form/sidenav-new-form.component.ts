@@ -5,6 +5,7 @@ import { SidenavService } from '../../services/sidenav.service';
 import { Address } from '../../types/address';
 import { Item } from '../../types/item';
 import { ActivatedRoute } from '@angular/router';
+import * as moment from 'moment';
 
 
 @Component({
@@ -34,17 +35,16 @@ import { ActivatedRoute } from '@angular/router';
   clientName: string = ''
   clientEmail: string = ''
 
-  invoiceDate: string = '2022-03-19'
+  invoiceDate: string = moment(new Date()).format('YYYY-MM-DD')
   description: string = ''
   paymentTerms: string = ''
   items: Item[] = []
   total: Number = 0
-  paymentTermOptions: Object = {
-    'Net 1 Day': 1,
-    'Net 7 Days': 2,
-    'Net 14 Days': 3,
-    'Net 30 Days': 4
+
+  @Input() paymentTermOptions = {
+    [String('Net 1 Day')]: 1, [String('Net 7 Days')]: 7, [String('Net 14 Days')]: 14, [String('Net 30 Days')]: 30
   }
+  selectedPaymentTerm: string = 'Net 1 Day'
 
 
   constructor(private route: ActivatedRoute, private sidenavService: SidenavService, private invoiceService: InvoiceService) {
@@ -99,6 +99,14 @@ import { ActivatedRoute } from '@angular/router';
       price: 0,
       total: 0
     })
+  }
+
+  changePaymentTerm(newPaymentTerm: { event: Event, paymentTerm: number }) {
+    const date = new Date()
+    date.setDate(date.getDate() + newPaymentTerm.paymentTerm)
+    console.log(newPaymentTerm)
+    console.log(date)
+    this.invoiceDate = moment(date).format('YYYY-MM-DD')
   }
 
   changeItemQuantity(i: number, value: string) {

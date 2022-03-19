@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, EventEmitter, Input, OnInit, Output } from '@angular/core';
 
 @Component({
   selector: 'app-payment-terms-dropdown',
@@ -7,8 +7,11 @@ import { Component, OnInit } from '@angular/core';
 })
 export class PaymentTermsDropdownComponent implements OnInit {
 
-  paymentTermOptions: string[] = ['Net 1 Day', 'Net 7 Days', 'Net 14 Days', 'Net 30 Days']
-  selectedPaymentTerm: string = this.paymentTermOptions[0]
+  @Input() paymentTermOptions = {
+    [String('Net 1 Day')]: 1, [String('Net 7 Days')]: 7, [String('Net 14 Days')]: 14, [String('Net 30 Days')]: 30
+  }
+  @Input() selectedPaymentTerm: string = 'Net 1 Day'
+  @Output() paymentTermChange = new EventEmitter()
   open: boolean = false
 
   constructor() { }
@@ -20,9 +23,14 @@ export class PaymentTermsDropdownComponent implements OnInit {
     this.open = !this.open
   }
 
+  getPaymentTermOptionKeys() {
+    return Object.keys(this.paymentTermOptions)
+  }
+
   changePaymentTerm(newPaymentTerm: string): void {
     this.selectedPaymentTerm = newPaymentTerm
     this.open = false
+    this.paymentTermChange.emit({ event: event, paymentTerm: this.paymentTermOptions[newPaymentTerm] })
   }
 
 }
