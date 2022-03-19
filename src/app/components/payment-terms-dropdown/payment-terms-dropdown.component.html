@@ -1,1 +1,12 @@
-<p>payment-terms-dropdown works!</p>
+<div class="dropdown">
+  <button (click)="toggleDropdown()">
+    <span class="selectedPaymentTerm">{{ selectedPaymentTerm }}</span>
+    <img src="/assets/images/icon-arrow-down.svg" alt="arrow" />
+  </button>
+  <div *ngIf="open" class="dropdown-content">
+    <div *ngFor="let paymentTermOption of paymentTermOptions" class="option" name="paymentOption" (click)="changePaymentTerm(paymentTermOption)">
+      
+      <label>{{ paymentTermOption }}</label>
+    </div>
+  </div>
+</div>

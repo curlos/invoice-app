@@ -73,11 +73,12 @@
               <label>Invoice Date</label>
               <input type="date" name="invoiceDate" [(ngModel)]="invoiceDate">
             </div>
-            
+
             <div class="inputWrapper">
               <label>Payment Terms</label>
-              <input type="text" name="paymentTerms" [(ngModel)]="paymentTerms">
+              <app-payment-terms-dropdown></app-payment-terms-dropdown>
             </div>
+            
           </div>
 
           <div class="inputWrapper">

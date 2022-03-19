@@ -132,29 +132,6 @@
       "id": "LynMtaW"
     },
     {
-      "paymentDue": "2022-03-17T12:48:35.356Z",
-      "description": "",
-      "paymentTerms": 1,
-      "status": "pending",
-      "senderAddress": {
-        "street": "",
-        "city": "",
-        "postCode": "",
-        "country": ""
-      },
-      "clientAddress": {
-        "street": "",
-        "city": "",
-        "postCode": "",
-        "country": ""
-      },
-      "items": [],
-      "total": 0,
-      "clientName": "",
-      "clientEmail": "",
-      "id": "gYY1m7P"
-    },
-    {
       "paymentDue": "2022-03-15T05:01:55.326Z",
       "description": "",
       "paymentTerms": 1,

@@ -34,7 +34,7 @@ import { ActivatedRoute } from '@angular/router';
   clientName: string = ''
   clientEmail: string = ''
 
-  invoiceDate: string = new Date().toISOString()
+  invoiceDate: string = '2022-03-19'
   description: string = ''
   paymentTerms: string = ''
   items: Item[] = []
@@ -145,6 +145,22 @@ import { ActivatedRoute } from '@angular/router';
   }
 
   editInvoice(): void {
+    const newInvoice = {
+      id: this.id,
+      paymentDue: this.invoiceDate,
+      description: this.description,
+      paymentTerms: 1,
+      status: status,
+      senderAddress: this.senderAddress,
+      clientAddress: this.clientAddress,
+      items: this.items,
+      total: this.getTotal(),
+      clientName: this.clientName,
+      clientEmail: this.clientEmail
+    }
 
+    this.invoiceService.editInvoice(newInvoice).subscribe((returnedInvoice) => {
+      window.location.reload()
+    })
   }
 }

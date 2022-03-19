@@ -14,7 +14,7 @@ const httpOptions = {
 })
 
 export class InvoiceService {
-  private apiUrl = 'http://localhost:5000/invoices'
+  private apiUrl = 'http://localhost:8080/api/invoices'
 
   constructor(private http: HttpClient) { }
 
@@ -29,6 +29,11 @@ export class InvoiceService {
 
   saveInvoice(invoice: Invoice): Observable<Invoice> {
     return this.http.post<Invoice>(this.apiUrl, invoice, httpOptions)
+  }
+
+  editInvoice(invoice: Invoice): Observable<Invoice> {
+    const url = `${this.apiUrl}/${invoice.id}`
+    return this.http.put<Invoice>(url, invoice, httpOptions)
   }
 
   deleteInvoice(invoice: Invoice): Observable<Invoice> {

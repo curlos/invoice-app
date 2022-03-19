@@ -19,6 +19,7 @@
   background-color: #9277FF;
   border-top-right-radius: 20px;
   border-bottom-right-radius: 20px;
+  cursor: pointer;
 }
 
 .logoWrapper img {
@@ -31,6 +32,7 @@
   justify-content: center;
   align-items: center;
   padding: 30px;
+  cursor: pointer;
 }
 
 .wrapper img {
