@@ -2,6 +2,7 @@ import { Injectable } from '@angular/core';
 import { HttpClient, HttpHeaders } from '@angular/common/http'
 import { Observable } from 'rxjs'
 import { Invoice } from '../types/Invoice'
+import { environment } from '../../environments/environment';
 
 const httpOptions = {
   headers: new HttpHeaders({
@@ -14,11 +15,13 @@ const httpOptions = {
 })
 
 export class InvoiceService {
-  private apiUrl = 'http://localhost:8080/api/invoices'
+  private apiUrl = environment.apiUrl + "/api/invoices"
 
   constructor(private http: HttpClient) { }
 
   getInvoices(): Observable<Invoice[]> {
+    console.log('Getting')
+    console.log(this.apiUrl)
     return this.http.get<Invoice[]>(this.apiUrl)
   }
 
