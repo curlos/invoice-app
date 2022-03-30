@@ -1,27 +1,44 @@
-# MyApp
+# Frontend Mentor - Invoice app solution
 
-This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 13.2.5.
+This is a solution to the [Invoice app challenge on Frontend Mentor](https://www.frontendmentor.io/challenges/invoice-app-i7KaLTQjl).
 
-## Development server
+## Table of contents
 
-Run `ng serve` for a dev server. Navigate to `http://localhost:4200/`. The app will automatically reload if you change any of the source files.
+- [The challenge](#the-challenge)
+- [Links](#links)
+- [My process](#my-process)
+  - [Built with](#built-with)
+- [Author](#author)
 
-## Code scaffolding
+### The challenge
 
-Run `ng generate component component-name` to generate a new component. You can also use `ng generate directive|pipe|service|class|guard|interface|enum|module`.
+Users are able to:
 
-## Build
+- View the optimal layout for the app depending on their device's screen size
+- See hover states for all interactive elements on the page
+- Create, read, update, and delete invoices
+- Receive form validations when trying to create/edit an invoice
+- Save draft invoices, and mark pending invoices as paid
+- Filter invoices by status (draft/pending/paid)
+- Toggle light and dark mode
 
-Run `ng build` to build the project. The build artifacts will be stored in the `dist/` directory.
+### Links
 
-## Running unit tests
+- Solution URL: [Github](https://github.com/curlos/invoice-app)
+- Live Site URL: [Live](http://invoice-app-beta.vercel.app/)
 
-Run `ng test` to execute the unit tests via [Karma](https://karma-runner.github.io).
+### Built with
 
-## Running end-to-end tests
+- [Angular](https://angular.io/)
+- [TypeScript](https://www.typescriptlang.org/)
+- [CSS]
+- [Java](https://reactjs.org/)
+- [Spring](https://spring.io/)
+- [Spring Boot](https://spring.io/projects/spring-boot)
+- [Spring Data JPA](https://spring.io/projects/spring-data-jpa)
+- [Hibernate](https://hibernate.org/)
+- [MySQL](https://www.mysql.com/)
 
-Run `ng e2e` to execute the end-to-end tests via a platform of your choice. To use this command, you need to first add a package that implements end-to-end testing capabilities.
+## Author
 
-## Further help
-
-To get more help on the Angular CLI use `ng help` or go check out the [Angular CLI Overview and Command Reference](https://angular.io/cli) page.
+- Website - [Carlos Martinez](https://github.com/curlos)
