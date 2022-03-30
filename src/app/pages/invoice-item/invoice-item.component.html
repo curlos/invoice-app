@@ -65,7 +65,7 @@
             <div class="start">
               <div>
                 <h4>Invoice Date</h4>
-                <div class="detail">{{ invoice.createdAt }}</div>
+                <div *ngIf="invoice.createdAt" class="detail">{{ getFormattedDate(invoice.createdAt) }}</div>
               </div>
   
               <div>

@@ -3,6 +3,7 @@ import { Item } from './item';
 export interface Invoice {
   id?: string;
   createdAt?: string;
+  updatedAt?: string;
   paymentDue: string;
   description: string;
   paymentTerms: number;
@@ -22,5 +23,5 @@ export interface Invoice {
     country: string;
   },
   items: Item[],
-  total: number
+  total: number,
 }
