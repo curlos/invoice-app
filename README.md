@@ -33,7 +33,6 @@ Users are able to:
 
 - [Angular](https://angular.io/)
 - [TypeScript](https://www.typescriptlang.org/)
-- [CSS]
 - [Java](https://reactjs.org/)
 - [Spring](https://spring.io/)
 - [Spring Boot](https://spring.io/projects/spring-boot)
