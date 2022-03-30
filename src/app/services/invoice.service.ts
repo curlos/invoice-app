@@ -39,8 +39,9 @@ export class InvoiceService {
     return this.http.put<Invoice>(url, invoice, httpOptions)
   }
 
-  deleteInvoice(invoice: Invoice): Observable<Invoice> {
+  deleteInvoice(invoice: Invoice): Observable<String> {
     const url = `${this.apiUrl}/${invoice.id}`
-    return this.http.delete<Invoice>(url)
+    console.log(url)
+    return this.http.delete<String>(url)
   }
 }

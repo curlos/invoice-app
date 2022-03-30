@@ -35,7 +35,7 @@
           <div class="actionButtons">
             <button class="edit" (click)="openSidenav()">Edit</button>
             <button class="delete" (click)="openDeleteModal()">Delete</button>
-            <button *ngIf="invoice.status !== 'paid'" class="statusButton" (click)="openDeleteModal()">Mark as Paid</button>
+            <button *ngIf="invoice.status !== 'paid'" class="statusButton" (click)="markAsPaid()">Mark as Paid</button>
           </div>
         </div>
   
@@ -109,7 +109,7 @@
                 <td class="name">{{ item.name }}</td>
                 <td class="quantity">{{ item.quantity }}</td>
                 <td class="price">${{ getNumWithCommas(getRoundedNum(item.price)) }}</td>
-                <td class="total">${{ getNumWithCommas(getRoundedNum(item.total)) }}</td>
+                <td class="total">${{ getNumWithCommas(item.total) }}</td>
               </tr>
               
             </table>
@@ -124,16 +124,16 @@
   
           <div class="amountDue">
             <div>Amount Due</div>
-            <h2>${{ getNumWithCommas(getRoundedNum(invoice.total))}}</h2>
+            <h2>${{ getNumWithCommas((invoice.total)) }}</h2>
           </div>
         </div>
       </div>
     </div>
   
-    <div class="bottomActionButtons">
+    <div *ngIf="!loading" class="bottomActionButtons">
       <button class="edit" (click)="openSidenav()">Edit</button>
       <button class="delete" (click)="openDeleteModal()">Delete</button>
-      <button *ngIf="invoice.status !== 'paid'" class="statusButton" (click)="openDeleteModal()">Mark as Paid</button>
+      <button *ngIf="invoice.status !== 'paid'" class="statusButton" (click)="markAsPaid()">Mark as Paid</button>
     </div>
   </div>
 </div>

@@ -40,6 +40,7 @@ import * as moment from 'moment';
   paymentTerms: string = ''
   items: Item[] = []
   total: Number = 0
+  status: string = 'pending'
 
   @Input() paymentTermOptions = {
     [String('Net 1 Day')]: 1, [String('Net 7 Days')]: 7, [String('Net 14 Days')]: 14, [String('Net 30 Days')]: 30
@@ -76,6 +77,7 @@ import * as moment from 'moment';
         this.paymentTerms = String(invoice.paymentTerms)
         this.items = invoice.items
         this.total = this.getTotal()
+        this.status = invoice.status
       })
     }
   }
@@ -158,7 +160,7 @@ import * as moment from 'moment';
       paymentDue: this.invoiceDate,
       description: this.description,
       paymentTerms: 1,
-      status: status,
+      status: this.status,
       senderAddress: this.senderAddress,
       clientAddress: this.clientAddress,
       items: this.items,

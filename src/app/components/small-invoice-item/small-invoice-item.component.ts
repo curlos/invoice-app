@@ -18,4 +18,13 @@ export class SmallInvoiceItemComponent implements OnInit {
     return new Date(this.invoice.paymentDue).toLocaleDateString()
   }
 
+  getRoundedNum(total: number) {
+    return Math.round((total + Number.EPSILON) * 100) / 100
+  }
+
+  getNumWithCommas(num: any) {
+    const num2 = this.getRoundedNum(Number(num))
+    return Number(num2).toLocaleString()
+  }
+
 }

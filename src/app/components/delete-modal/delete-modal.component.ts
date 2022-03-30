@@ -26,9 +26,12 @@ export class DeleteModalComponent implements OnInit {
 
   confirmDeleteInvoice(): void {
     console.log('deleting')
-    this.invoiceService.deleteInvoice(this.invoice).subscribe(() => {
-      console.log(this.invoice)
+    this.invoiceService.deleteInvoice(this.invoice).subscribe((result) => {
+      console.log(result)
+      this.deleteModalService.closeModal()
       this.router.navigate(['/'])
+    }, err => {
+      console.log(err)
     })
   }
 

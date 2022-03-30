@@ -51,6 +51,13 @@ export class InvoiceItemComponent implements OnInit {
   }
 
   getNumWithCommas(num: any) {
-    return Number(num).toLocaleString()
+    const num2 = this.getRoundedNum(Number(num))
+    return Number(num2).toLocaleString()
+  }
+
+  markAsPaid() {
+    this.invoice.status = 'paid'
+
+    this.invoiceService.editInvoice(this.invoice).subscribe()
   }
 }
