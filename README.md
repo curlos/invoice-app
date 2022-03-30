@@ -26,8 +26,8 @@ Users are able to:
 
 ### Links
 
-- Frontend Repo URL: [Github](https://github.com/curlos/invoice-app)
 - Backend Repo URL: [Github](https://github.com/curlos/invoice-app-backend)
+- Frontend Repo URL: [Github](https://github.com/curlos/invoice-app)
 - Live Site URL: [Live](http://invoice-app-beta.vercel.app/)
 
 ### Built with
