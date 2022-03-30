@@ -1,4 +1,6 @@
-# Frontend Mentor - Invoice app solution
+# Invoice App - Frontend Mentor
+
+![Design preview for the Invoice app coding challenge](/src/assets/images/preview.jpeg)
 
 This is a solution to the [Invoice app challenge on Frontend Mentor](https://www.frontendmentor.io/challenges/invoice-app-i7KaLTQjl).
 
@@ -41,4 +43,4 @@ Users are able to:
 
 ## Author
 
-- Website - [Carlos Martinez](https://github.com/curlos)
+- [Carlos Martinez](https://github.com/curlos)
